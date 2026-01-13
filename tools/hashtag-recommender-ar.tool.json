@@ -1,0 +1,21 @@
+{
+  "tool_id": "hashtag-recommender-ar",
+  "name": "Arabic Hashtag Recommender",
+  "version": "0.1.0",
+  "status": "spec",
+  "description": "Suggest Arabic/Saudi-relevant hashtags with a mix of general and niche tags.",
+  "inputs": {
+    "platform": "instagram|x",
+    "topic": "string",
+    "count": "optional<number>"
+  },
+  "outputs": {
+    "hashtags": "array<string>"
+  },
+  "notes": "For Instagram, recommend 5–12 tags; for X, keep minimal.",
+  "attribution": {
+    "copyright": "© OpenOps Studio",
+    "created_by": "Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
+  }
+}

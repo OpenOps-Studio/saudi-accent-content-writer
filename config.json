@@ -1,0 +1,325 @@
+{
+  "agent_config": {
+    "id": "agent_saudi_accent_writer_v2",
+    "name": "Saudi Accent Content Writer",
+    "version": "2.0",
+    "status": "production",
+    "description": "Enterprise-grade Saudi dialect content generation with institutional compliance",
+    "framework": "OpenOps Studio",
+    "created_by": "Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar",
+    "last_updated": "2026-01-13"
+  },
+  
+  "capabilities": {
+    "dialect_support": {
+      "saudi_formal": {
+        "msa_percentage": 80,
+        "saudi_percentage": 20,
+        "use_cases": ["government", "institutional", "formal_announcements"],
+        "authenticity_target": 99
+      },
+      "saudi_conversational": {
+        "saudi_percentage": 70,
+        "msa_percentage": 30,
+        "use_cases": ["social_media", "consumer_content", "brand_personality"],
+        "authenticity_target": 95
+      },
+      "gulf_regional": {
+        "saudi_percentage": 50,
+        "gulf_percentage": 30,
+        "msa_percentage": 20,
+        "use_cases": ["cross_gcc", "regional_expansion"],
+        "authenticity_target": 92
+      }
+    },
+    
+    "content_generation": {
+      "variants_per_request": 5,
+      "platforms": [
+        "linkedin",
+        "instagram",
+        "tiktok",
+        "twitter",
+        "corporate_website",
+        "email",
+        "sms",
+        "whatsapp_business"
+      ],
+      "output_formats": [
+        "markdown",
+        "json",
+        "html",
+        "pdf"
+      ],
+      "quality_threshold": 0.90
+    },
+    
+    "compliance_frameworks": {
+      "citc_standards": {
+        "enabled": true,
+        "priority": "critical",
+        "areas": [
+          "advertising_standards",
+          "claims_substantiation",
+          "consumer_protection",
+          "brand_safety",
+          "prohibited_content"
+        ]
+      },
+      "saudi_media_ministry": {
+        "enabled": true,
+        "priority": "critical",
+        "areas": [
+          "content_sensitivity",
+          "saudi_values_alignment",
+          "family_appropriateness",
+          "religious_respect"
+        ]
+      },
+      "legal_requirements": {
+        "enabled": true,
+        "priority": "critical",
+        "areas": [
+          "contractual_compliance",
+          "ip_protection",
+          "privacy_regulations",
+          "advertising_standards"
+        ]
+      }
+    }
+  },
+  
+  "processing_nodes": {
+    "total_nodes": 13,
+    "execution_strategy": "hybrid_parallel_sequential",
+    "nodes": [
+      {
+        "id": 1,
+        "name": "dialect_selection",
+        "type": "analysis",
+        "parallel_execution": true,
+        "depends_on": [],
+        "outputs": ["dialect_profile", "authenticity_guardrails", "tone_templates"]
+      },
+      {
+        "id": 2,
+        "name": "audience_resonance",
+        "type": "analysis",
+        "parallel_execution": true,
+        "depends_on": [],
+        "outputs": ["resonance_map", "messaging_angles", "credibility_signals"]
+      },
+      {
+        "id": 3,
+        "name": "institutional_compliance",
+        "type": "analysis",
+        "parallel_execution": true,
+        "depends_on": [],
+        "outputs": ["stakeholder_map", "vision_alignment", "approval_workflows"]
+      },
+      {
+        "id": 4,
+        "name": "risk_assessment",
+        "type": "analysis",
+        "parallel_execution": true,
+        "depends_on": [],
+        "outputs": ["risk_scorecard", "mitigation_strategies", "escalation_triggers"]
+      },
+      {
+        "id": 5,
+        "name": "platform_optimization",
+        "type": "analysis",
+        "parallel_execution": true,
+        "depends_on": [],
+        "outputs": ["platform_specs", "format_recommendations", "engagement_predictions"]
+      },
+      {
+        "id": 6,
+        "name": "content_generation",
+        "type": "generation",
+        "parallel_execution": false,
+        "depends_on": [1, 2, 3, 4, 5],
+        "outputs": ["content_variants", "variant_metadata", "performance_predictions"]
+      },
+      {
+        "id": 7,
+        "name": "compliance_verification",
+        "type": "verification",
+        "parallel_execution": false,
+        "depends_on": [6, 4],
+        "outputs": ["compliance_certificate", "violation_report", "publication_status"]
+      },
+      {
+        "id": 8,
+        "name": "performance_framework",
+        "type": "framework",
+        "parallel_execution": true,
+        "depends_on": [6, 7],
+        "outputs": ["kpi_framework", "dashboard_template", "measurement_methodology"]
+      },
+      {
+        "id": 9,
+        "name": "testing_strategy",
+        "type": "framework",
+        "parallel_execution": true,
+        "depends_on": [6, 7],
+        "outputs": ["ab_test_specs", "sample_size_requirements", "results_framework"]
+      },
+      {
+        "id": 10,
+        "name": "risk_mitigation",
+        "type": "framework",
+        "parallel_execution": true,
+        "depends_on": [4, 6, 7],
+        "outputs": ["crisis_protocols", "response_templates", "escalation_matrix"]
+      },
+      {
+        "id": 11,
+        "name": "calendar_integration",
+        "type": "framework",
+        "parallel_execution": true,
+        "depends_on": [6],
+        "outputs": ["content_calendar", "timing_recommendations", "seasonal_themes"]
+      },
+      {
+        "id": 12,
+        "name": "voice_guidelines",
+        "type": "framework",
+        "parallel_execution": true,
+        "depends_on": [1, 2, 6],
+        "outputs": ["voice_guidelines", "tone_matrix", "vocabulary_guide"]
+      },
+      {
+        "id": 13,
+        "name": "strategic_brief",
+        "type": "synthesis",
+        "parallel_execution": false,
+        "depends_on": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+        "outputs": ["executive_brief", "recommendations", "next_steps"]
+      }
+    ]
+  },
+  
+  "operational_modes": {
+    "express": {
+      "duration_minutes": 30,
+      "node_execution": "1-5, 6, simplified_compliance",
+      "output_scope": "basic_variants_compliance_check",
+      "target_users": "time_sensitive_campaigns",
+      "quality_level": "professional"
+    },
+    "standard": {
+      "duration_minutes": 90,
+      "node_execution": "all_nodes",
+      "output_scope": "comprehensive_package",
+      "target_users": "campaign_launches",
+      "quality_level": "enterprise"
+    },
+    "strategic": {
+      "duration_minutes": 240,
+      "node_execution": "all_nodes_with_depth",
+      "output_scope": "full_deliverables_plus_positioning",
+      "target_users": "market_entry_rebranding",
+      "quality_level": "strategic_grade"
+    },
+    "continuous": {
+      "frequency": "weekly_or_monthly",
+      "node_execution": "targeted_nodes",
+      "output_scope": "ongoing_content_optimization",
+      "target_users": "ongoing_management",
+      "quality_level": "sustained_enterprise"
+    }
+  },
+  
+  "quality_gates": [
+    {
+      "gate_id": 1,
+      "name": "authenticity_verification",
+      "metric": "confidence_score",
+      "threshold": 0.90,
+      "pass_action": "proceed",
+      "fail_action": "regenerate"
+    },
+    {
+      "gate_id": 2,
+      "name": "compliance_check",
+      "metric": "pass_fail",
+      "threshold": 1.0,
+      "pass_action": "proceed",
+      "fail_action": "escalate_to_legal"
+    },
+    {
+      "gate_id": 3,
+      "name": "audience_alignment",
+      "metric": "resonance_score",
+      "threshold": 0.80,
+      "pass_action": "proceed",
+      "fail_action": "adjust_messaging"
+    },
+    {
+      "gate_id": 4,
+      "name": "platform_optimization",
+      "metric": "format_compliance",
+      "threshold": 1.0,
+      "pass_action": "proceed",
+      "fail_action": "reformat"
+    },
+    {
+      "gate_id": 5,
+      "name": "strategic_alignment",
+      "metric": "fit_score",
+      "threshold": 0.85,
+      "pass_action": "approve",
+      "fail_action": "strategic_review"
+    }
+  ],
+  
+  "risk_matrix": {
+    "green": {
+      "range": "0-3",
+      "description": "Low Risk",
+      "action": "standard_process",
+      "approval_required": false
+    },
+    "yellow": {
+      "range": "4-6",
+      "description": "Medium Risk",
+      "action": "compliance_review",
+      "approval_required": true
+    },
+    "red": {
+      "range": "7-10",
+      "description": "High Risk",
+      "action": "executive_approval_legal_review",
+      "approval_required": true
+    }
+  },
+  
+  "integration_events": {
+    "emitted_events": [
+      "SAUDI_CONTENT_GENERATED",
+      "COMPLIANCE_CHECK_COMPLETED",
+      "RISK_ASSESSMENT_COMPLETED",
+      "PERFORMANCE_FRAMEWORK_READY",
+      "VARIANT_A_SELECTED",
+      "ENGAGEMENT_METRIC_UPDATED"
+    ],
+    "external_systems": [
+      "citc_database",
+      "saudi_government_map",
+      "social_media_apis",
+      "analytics_platforms",
+      "legal_review_system",
+      "crm_systems",
+      "marketing_automation_tools"
+    ]
+  },
+  
+  "attribution_requirements": {
+    "mandatory": true,
+    "format": "© OpenOps Studio - Strategic and Execution Framework - Created by Mamdouh Aboammar - LinkedIn: https://www.linkedin.com/in/mamdouh-aboammar",
+    "placement": "end_of_every_document",
+    "version": "2.0"
+  }
+}

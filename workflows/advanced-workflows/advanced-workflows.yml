@@ -1,0 +1,526 @@
+version: "1.0"
+profile: "SaudiAccentContentWriter"
+workflows:
+  - id: "content-creation-from-brief"
+    name: "Content Creation from Brief"
+    version: "2.0"
+    status: "production"
+    
+    triggers:
+      - type: "event"
+        event: "content_brief_received"
+        event_schema:
+          business_context: "string"
+          target_audience: "object"
+          platforms: "array"
+    
+    phases:
+      - id: "phase_1_analysis"
+        name: "Brief Analysis & Dialect Mapping"
+        duration_minutes: 30
+        parallel_capable: false
+        
+        inputs:
+          - name: "business_brief"
+            type: "object"
+            required: true
+          - name: "audience_profile"
+            type: "object"
+            required: true
+          - name: "compliance_requirements"
+            type: "array"
+            required: true
+        
+        outputs:
+          - name: "dialect_mapping"
+            type: "object"
+          - name: "context_matrix"
+            type: "object"
+          - name: "compliance_precheck"
+            type: "object"
+        
+        processing_logic:
+          - parse_brief: "Extract context markers"
+          - analyze_audience: "Gather demographics and preferences"
+          - run_compliance_check: "Initial regulatory screening"
+          - map_dialect: "Determine optimal Arabic blend"
+        
+        success_criteria:
+          - criteria: "audience_profile_complete"
+            threshold: "100%"
+          - criteria: "platform_alignment"
+            threshold: "verified"
+          - criteria: "compliance_red_flags"
+            threshold: "0"
+      
+      - id: "phase_2_voice"
+        name: "Authentic Voice Development"
+        duration_minutes: 45
+        parallel_capable: true
+        
+        inputs:
+          - name: "dialect_mapping"
+            type: "object"
+            required: true
+          - name: "brand_guidelines"
+            type: "object"
+            required: true
+          - name: "cultural_context"
+            type: "object"
+            required: true
+        
+        outputs:
+          - name: "voice_personas"
+            type: "array"
+          - name: "cultural_references"
+            type: "array"
+          - name: "tone_samples"
+            type: "array"
+        
+        personas:
+          - id: "al_wadoud"
+            name: "Al-Wadoud (Warm, Relatable)"
+            use_case: "consumer_brands_social_causes"
+          - id: "al_khabir"
+            name: "Al-Khabir (Expert Authority)"
+            use_case: "institutions_government_communications"
+          - id: "al_muasser"
+            name: "Al-Mu'asser (Trendsetter)"
+            use_case: "youth_brands_innovation"
+        
+        success_criteria:
+          - criteria: "persona_selection"
+            threshold: "audience_match_verified"
+          - criteria: "cultural_references"
+            threshold: "contextually_appropriate"
+          - criteria: "voice_authenticity"
+            threshold: "native_speaker_approval"
+      
+      - id: "phase_3_generation"
+        name: "Content Generation"
+        duration_minutes: 90
+        parallel_capable: true
+        depends_on: ["phase_2_voice"]
+        
+        inputs:
+          - name: "voice_personas"
+            type: "array"
+            required: true
+          - name: "platform_specs"
+            type: "object"
+            required: true
+          - name: "cultural_authenticity"
+            type: "object"
+            required: true
+        
+        outputs:
+          - name: "content_variants"
+            type: "array"
+            variant_count: 5
+          - name: "on_design_text"
+            type: "array"
+          - name: "performance_predictions"
+            type: "object"
+        
+        variant_types:
+          - type: "hook_focused"
+            description: "Emotional trigger-driven"
+          - type: "value_focused"
+            description: "Benefit-driven narrative"
+          - type: "action_focused"
+            description: "CTA-heavy approach"
+          - type: "story_focused"
+            description: "Narrative arc with progression"
+          - type: "data_focused"
+            description: "Credibility and proof-points"
+        
+        platform_formatting:
+          - platform: "instagram"
+            max_caption_length: 2200
+            hashtag_count: 3-5
+            emoji_density: "low"
+          - platform: "tiktok"
+            max_caption_length: 150
+            hashtag_count: 1-3
+            emoji_density: "medium"
+          - platform: "snapchat"
+            max_caption_length: 80
+            hashtag_count: 0-1
+            emoji_density: "medium"
+          - platform: "linkedin"
+            max_caption_length: 3000
+            hashtag_count: 1-3
+            emoji_density: "none"
+          - platform: "x"
+            max_caption_length: 280
+            hashtag_count: 1-2
+            emoji_density: "low"
+        
+        compliance_checks:
+          - type: "prohibited_claims"
+            severity: "critical"
+          - type: "religious_sensitivity"
+            severity: "critical"
+          - type: "regulatory_compliance"
+            severity: "critical"
+          - type: "platform_policies"
+            severity: "high"
+        
+        success_criteria:
+          - criteria: "variants_generated"
+            threshold: "5_per_platform"
+          - criteria: "compliance_checks"
+            threshold: "all_passed"
+          - criteria: "design_direction"
+            threshold: "complete"
+      
+      - id: "phase_4_testing"
+        name: "Testing & Optimization"
+        duration_minutes: 45
+        parallel_capable: false
+        depends_on: ["phase_3_generation"]
+        
+        inputs:
+          - name: "content_variants"
+            type: "array"
+            required: true
+          - name: "historical_engagement"
+            type: "object"
+            required: false
+          - name: "platform_algorithms"
+            type: "object"
+            required: false
+        
+        outputs:
+          - name: "ab_testing_framework"
+            type: "object"
+          - name: "performance_prediction"
+            type: "object"
+          - name: "testing_timeline"
+            type: "object"
+        
+        ab_testing_pairs:
+          - pair_1: "hook_vs_value"
+          - pair_2: "action_vs_story"
+          - pair_3: "data_vs_hook"
+        
+        success_criteria:
+          - criteria: "testing_framework"
+            threshold: "defined_and_documented"
+          - criteria: "prediction_accuracy"
+            threshold: "baseline_±20%"
+          - criteria: "timeline"
+            threshold: "realistic_for_campaign"
+      
+      - id: "phase_5_compliance"
+        name: "Compliance Final Verification"
+        duration_minutes: 30
+        parallel_capable: false
+        depends_on: ["phase_4_testing"]
+        
+        inputs:
+          - name: "all_content"
+            type: "array"
+            required: true
+          - name: "compliance_frameworks"
+            type: "object"
+            required: true
+          - name: "legal_guidelines"
+            type: "object"
+            required: true
+        
+        outputs:
+          - name: "compliance_report"
+            type: "object"
+          - name: "risk_assessment"
+            type: "object"
+          - name: "launch_checklist"
+            type: "array"
+        
+        compliance_frameworks:
+          - framework: "CITC_regulations"
+            severity: "critical"
+          - framework: "saudi_media_ministry"
+            severity: "critical"
+          - framework: "platform_policies"
+            severity: "high"
+          - framework: "brand_guidelines"
+            severity: "high"
+        
+        risk_flags:
+          - level: "green"
+            meaning: "approved"
+            action: "publish"
+          - level: "yellow"
+            meaning: "review_required"
+            action: "route_to_reviewer"
+          - level: "red"
+            meaning: "rejected"
+            action: "return_for_revision"
+        
+        success_criteria:
+          - criteria: "content_status"
+            threshold: "all_green_or_yellow"
+          - criteria: "red_flags"
+            threshold: "zero_blocking"
+          - criteria: "sign_off"
+            threshold: "compliance_approved"
+    
+    gates:
+      - id: "gate_1"
+        name: "Audience Alignment"
+        order: 1
+        phase_applied: "phase_1_analysis"
+        pass_criteria:
+          - "audience_profile_complete"
+          - "platform_choice_aligned"
+          - "no_red_compliance_flags"
+        fail_action: "return_to_phase_1"
+        escalation: "compliance_officer"
+      
+      - id: "gate_2"
+        name: "Voice Authenticity"
+        order: 2
+        phase_applied: "phase_2_voice"
+        pass_criteria:
+          - "persona_matches_audience"
+          - "cultural_references_appropriate"
+          - "voice_aligned_with_brand"
+        fail_action: "iterate_personas"
+        escalation: "brand_manager"
+      
+      - id: "gate_3"
+        name: "Compliance"
+        order: 3
+        phase_applied: "phase_5_compliance"
+        pass_criteria:
+          - "no_red_flags"
+          - "all_content_green_or_yellow"
+          - "compliance_sign_off"
+        fail_action: "revise_content"
+        escalation: "legal_team"
+      
+      - id: "gate_4"
+        name: "Performance Viability"
+        order: 4
+        phase_applied: "phase_4_testing"
+        pass_criteria:
+          - "engagement_within_baseline"
+          - "clear_cta"
+          - "metrics_measurable"
+        fail_action: "adjust_strategy"
+        escalation: "analytics_team"
+    
+    integrations:
+      - system: "content_management_system"
+        action: "store_and_distribute_variants"
+        endpoint: "/api/v1/content"
+      - system: "analytics_platform"
+        action: "track_performance_metrics"
+        endpoint: "/api/v1/analytics"
+      - system: "compliance_database"
+        action: "verify_regulatory_compliance"
+        endpoint: "/api/v1/compliance"
+      - system: "social_media_management"
+        action: "schedule_and_publish"
+        endpoint: "/api/v1/social"
+    
+    error_handling:
+      - error_type: "compliance_failure"
+        retry_count: 3
+        escalation_path: "legal_team"
+        fallback: "manual_review_required"
+      - error_type: "api_unavailable"
+        retry_count: 5
+        retry_delay_minutes: 5
+        escalation_path: "operations"
+    
+    sla_specs:
+      phase_1_sla_hours: 0.5
+      phase_2_sla_hours: 0.75
+      phase_3_sla_hours: 1.5
+      phase_4_sla_hours: 0.75
+      phase_5_sla_hours: 0.5
+      total_sla_hours: 4
+      gate_resolution_hours: 2
+
+  - id: "multi-platform-adaptation"
+    name: "Multi-Platform Copy Adaptation"
+    version: "2.0"
+    status: "production"
+    
+    triggers:
+      - type: "event"
+        event: "campaign_message_defined"
+    
+    phases:
+      - id: "phase_1_profiling"
+        name: "Platform Profiling"
+        duration_minutes: 15
+        outputs:
+          - name: "platform_profiles"
+            type: "array"
+      
+      - id: "phase_2_deconstruction"
+        name: "Core Message Deconstruction"
+        duration_minutes: 15
+        depends_on: ["phase_1_profiling"]
+        outputs:
+          - name: "message_elements"
+            type: "object"
+      
+      - id: "phase_3_adaptation"
+        name: "Platform-Specific Adaptation"
+        duration_minutes: 45
+        parallel_capable: true
+        depends_on: ["phase_2_deconstruction"]
+        outputs:
+          - name: "platform_strategies"
+            type: "array"
+      
+      - id: "phase_4_visual"
+        name: "Visual Direction Mapping"
+        duration_minutes: 15
+        parallel_capable: true
+        outputs:
+          - name: "visual_briefs"
+            type: "array"
+      
+      - id: "phase_5_monitoring"
+        name: "Performance Monitoring Setup"
+        duration_minutes: 15
+        outputs:
+          - name: "kpi_specifications"
+            type: "object"
+    
+    gates:
+      - id: "gate_platform_alignment"
+        name: "Platform Alignment"
+        pass_criteria:
+          - "unique_strategy_per_platform"
+          - "algorithm_consideration"
+          - "audience_behavior_reflection"
+      
+      - id: "gate_message_integrity"
+        name: "Message Integrity"
+        pass_criteria:
+          - "core_message_preserved"
+          - "platform_norms_adapted"
+          - "authenticity_maintained"
+
+  - id: "institutional-communication"
+    name: "Institutional Communication Suite"
+    version: "2.0"
+    status: "production"
+    
+    triggers:
+      - type: "event"
+        event: "institutional_brief_received"
+    
+    phases:
+      - id: "phase_1_analysis"
+        name: "Institutional Context Analysis"
+        duration_minutes: 30
+      - id: "phase_2_messaging"
+        name: "Messaging Architecture"
+        duration_minutes: 45
+        depends_on: ["phase_1_analysis"]
+      - id: "phase_3_development"
+        name: "Multi-Format Content Development"
+        duration_minutes: 120
+        parallel_capable: true
+        depends_on: ["phase_2_messaging"]
+      - id: "phase_4_review"
+        name: "Compliance & Legal Review"
+        duration_minutes: 60
+        depends_on: ["phase_3_development"]
+      - id: "phase_5_contingency"
+        name: "Crisis Contingency Planning"
+        duration_minutes: 30
+        depends_on: ["phase_4_review"]
+    
+    gates:
+      - id: "gate_institutional"
+        name: "Institutional Alignment"
+        pass_criteria:
+          - "governance_standards_met"
+          - "communication_protocols_followed"
+          - "institutional_values_aligned"
+
+  - id: "crisis-communication"
+    name: "Crisis Communication Management"
+    version: "2.0"
+    status: "production"
+    
+    triggers:
+      - type: "event"
+        event: "crisis_detected"
+        severity_detection: true
+    
+    phases:
+      - id: "phase_1_detection"
+        name: "Crisis Detection"
+        monitoring: "continuous"
+        outputs:
+          - name: "crisis_alert"
+            type: "object"
+          - name: "severity_classification"
+            type: "enum"
+            values: ["green", "yellow", "orange", "red"]
+      
+      - id: "phase_2_assessment"
+        name: "Rapid Assessment"
+        duration_minutes: 30
+        depends_on: ["phase_1_detection"]
+      
+      - id: "phase_3_response"
+        name: "Response Strategy"
+        conditional: true
+        depends_on: ["phase_2_assessment"]
+        
+        response_paths:
+          - severity: "green"
+            action: "monitor_and_log"
+            timeline: "24_hours"
+          - severity: "yellow"
+            action: "acknowledge_and_outreach"
+            timeline: "4_hours"
+          - severity: "orange"
+            action: "public_statement"
+            timeline: "1_2_hours"
+          - severity: "red"
+            action: "full_crisis_protocol"
+            timeline: "30_minutes"
+      
+      - id: "phase_4_messaging"
+        name: "Message Development"
+        duration_minutes: 60
+        depends_on: ["phase_3_response"]
+      
+      - id: "phase_5_execution"
+        name: "Execution & Recovery"
+        monitoring: "continuous"
+        depends_on: ["phase_4_messaging"]
+    
+    gates:
+      - id: "gate_severity"
+        name: "Severity Assessment"
+        pass_criteria:
+          - "accurate_classification"
+          - "appropriate_response_level"
+      
+      - id: "gate_authenticity"
+        name: "Message Authenticity"
+        pass_criteria:
+          - "not_corporate_apology"
+          - "culturally_appropriate"
+          - "legally_compliant"
+
+metadata:
+  created_by: "Mamdouh Aboammar"
+  email: "me@mamdouhaboammar.com"
+  linkedin: "https://www.linkedin.com/in/mamdouh-aboammar"
+  whatsapp: "https://wa.me/+201092677269"
+  organization: "OpenOps Studio"
+  version: "2.0"
+  last_updated: "2026-01-13"

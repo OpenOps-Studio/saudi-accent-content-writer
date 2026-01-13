@@ -1,0 +1,447 @@
+## Processing Logic Specification
+## Version: 2.0
+## Status: Production Ready
+
+name: SaudiAccentContentWriter_ProcessingLogic
+version: 2.0
+
+# Attribution
+metadata:
+  framework: OpenOps Studio
+  created_by: Mamdouh Aboammar
+  linkedin: https://www.linkedin.com/in/mamdouh-aboammar
+
+# Processing Phases
+phases:
+  phase_1_analysis:
+    name: Parallel Analysis Nodes
+    duration: "10 minutes"
+    nodes:
+      - node_1_dialect_selection
+      - node_2_audience_resonance
+      - node_3_institutional_compliance
+      - node_4_risk_assessment
+      - node_5_platform_optimization
+    parallelization: full_parallel
+    dependencies: none
+    outputs:
+      - dialect_profile
+      - audience_resonance_map
+      - institutional_fit_score
+      - risk_scorecard
+      - platform_specifications
+
+  phase_2_content_generation:
+    name: Content Generation
+    duration: "10 minutes"
+    nodes:
+      - node_6_content_generation
+    parallelization: not_applicable
+    dependencies:
+      - requires: phase_1_analysis
+        condition: "all_nodes_completed"
+    outputs:
+      - content_variants_3_to_5
+      - variant_metadata
+      - performance_predictions
+
+  phase_3_compliance:
+    name: Compliance Verification
+    duration: "5 minutes"
+    nodes:
+      - node_7_compliance_verification
+    parallelization: not_applicable
+    dependencies:
+      - requires: phase_2_content_generation
+        condition: "content_generated"
+      - requires: phase_1_analysis.node_4
+        condition: "risk_assessment_completed"
+    outputs:
+      - compliance_certificate
+      - violation_report
+      - publication_approval_status
+
+  phase_4_frameworks:
+    name: Framework Generation
+    duration: "25 minutes"
+    nodes:
+      - node_8_performance_framework
+      - node_9_testing_strategy
+      - node_10_risk_mitigation
+      - node_11_calendar_integration
+      - node_12_voice_guidelines
+      - node_13_strategic_brief
+    parallelization: full_parallel
+    dependencies:
+      - requires: phase_2_content_generation
+        condition: "variants_complete"
+      - requires: phase_3_compliance
+        condition: "compliance_verified"
+    outputs:
+      - kpi_framework
+      - ab_test_specifications
+      - crisis_protocols
+      - seasonal_calendar
+      - brand_voice_guidelines
+      - executive_brief
+
+# Node Specifications
+nodes:
+  node_1:
+    name: Dialect Selection
+    input_requirements:
+      - is_institutional: boolean
+      - is_government: boolean
+      - target_audience_age: array
+      - primary_platform: string
+      - region: string
+    processing_logic:
+      - determine_institutional_context
+      - select_optimal_dialect_blend
+      - generate_vocabulary_constraints
+      - generate_authenticity_guardrails
+    output_format:
+      type: DialectProfile
+      fields:
+        - type: enum[SAUDI_FORMAL, SAUDI_CONVERSATIONAL, GULF_REGIONAL, SAUDI_SLANG]
+        - msa_percentage: number
+        - saudi_percentage: number
+        - authenticity_target: number
+        - tone_template: string
+        - vocabulary_constraints: array
+        - guardrails: array
+
+  node_2:
+    name: Audience Resonance Analysis
+    input_requirements:
+      - core_values: array
+      - pain_points: array
+      - aspirations: array
+      - trust_factors: array
+      - decision_criteria: array
+    processing_logic:
+      - rank_values_hierarchy
+      - map_pain_point_solutions
+      - generate_messaging_angles
+      - calculate_resonance_score
+      - identify_credibility_signals
+    output_format:
+      type: AudienceResonanceMap
+      fields:
+        - values_hierarchy: object
+        - pain_point_mapping: object
+        - messaging_angles: array
+        - resonance_score: number
+        - credibility_signals: array
+
+  node_3:
+    name: Institutional Compliance
+    input_requirements:
+      - is_institutional_content: boolean
+      - target_government_ministry: string
+      - vision_2030_alignment_required: boolean
+    processing_logic:
+      - map_government_structure
+      - identify_stakeholders
+      - determine_approval_workflows
+      - score_vision_2030_alignment
+    output_format:
+      type: InstitutionalComplianceMap
+      fields:
+        - stakeholder_map: object
+        - approval_workflows: array
+        - vision_2030_alignment_score: number
+        - institutional_fit_score: number
+
+  node_4:
+    name: Risk Assessment
+    input_requirements:
+      - content_themes: array
+      - company_reputation_baseline: number
+      - previous_crisis_precedents: array
+    processing_logic:
+      - assess_political_risk
+      - assess_religious_risk
+      - assess_reputational_risk
+      - assess_market_risk
+      - assess_compliance_risk
+      - calculate_weighted_overall_score
+      - assign_risk_level
+    output_format:
+      type: RiskAssessment
+      fields:
+        - overall_score: number 0-10
+        - risk_level: enum[GREEN, YELLOW, RED]
+        - category_scores: object
+        - mitigation_strategies: array
+        - escalation_triggers: array
+        - approval_required: boolean
+
+  node_5:
+    name: Platform Optimization
+    input_requirements:
+      - primary_platform: string
+      - secondary_platforms: array
+      - audience_demographics: object
+    processing_logic:
+      - load_platform_specifications
+      - determine_format_requirements
+      - calculate_optimal_length
+      - generate_hashtag_strategy
+      - predict_engagement_rates
+    output_format:
+      type: PlatformSpecifications
+      fields:
+        - platform: string
+        - format_requirements: object
+        - optimal_length: object
+        - hashtag_strategy: array
+        - call_to_action_framework: string
+        - engagement_prediction: number
+        - posting_time_optimization: string
+
+  node_6:
+    name: Content Generation
+    input_requirements:
+      - dialect_profile: object
+      - audience_resonance_map: object
+      - platform_specs: object
+      - risk_assessment: object
+    processing_logic:
+      - for_each_variant:
+          - determine_variant_strategy
+          - generate_content_text
+          - generate_headline
+          - generate_cta
+          - apply_authenticity_filters
+          - verify_consistency
+          - calculate_authenticity_score
+          - predict_engagement
+      - rank_variants_by_quality
+    output_format:
+      type: ContentVariants
+      fields:
+        - variants: array
+        - metadata: object
+        - average_authenticity: number
+        - average_engagement_prediction: number
+
+  node_7:
+    name: Compliance Verification
+    input_requirements:
+      - content_variants: array
+      - risk_assessment: object
+      - compliance_requirements: object
+    processing_logic:
+      - for_each_variant:
+          - verify_citc_requirements
+          - verify_media_ministry_requirements
+          - verify_legal_requirements
+      - collect_violations
+      - calculate_compliance_score
+      - determine_publication_status
+    output_format:
+      type: ComplianceVerification
+      fields:
+        - status: enum[PASSED, FAILED]
+        - compliance_score: number
+        - violations: array
+        - certification_issued: boolean
+        - review_required: boolean
+
+  node_8:
+    name: Performance Framework
+    input_requirements:
+      - business_objectives: object
+      - content_variants: array
+      - industry_benchmarks: object
+    processing_logic:
+      - define_kpi_tiers
+      - set_performance_targets
+      - create_measurement_methodology
+      - generate_dashboard_template
+      - create_review_templates
+    output_format:
+      type: PerformanceFramework
+      fields:
+        - kpi_framework: object
+        - tier_definitions: array
+        - dashboard_template: object
+        - measurement_methodology: object
+        - reporting_templates: array
+
+  node_9:
+    name: Testing Strategy
+    input_requirements:
+      - content_variants: array
+      - platform_specs: object
+      - audience_size: number
+    processing_logic:
+      - for_each_variant_pair:
+          - calculate_sample_size
+          - determine_test_duration
+          - set_success_criteria
+          - generate_test_specification
+      - create_monitoring_dashboard
+      - create_results_analysis_template
+    output_format:
+      type: ABTestingStrategy
+      fields:
+        - test_specifications: array
+        - sample_size_requirements: object
+        - success_criteria: object
+        - monitoring_dashboard: object
+
+  node_10:
+    name: Risk Mitigation
+    input_requirements:
+      - risk_assessment: object
+      - content_variants: array
+    processing_logic:
+      - define_crisis_scenarios
+      - create_response_protocols
+      - generate_communication_templates
+      - establish_escalation_paths
+    output_format:
+      type: RiskMitigation
+      fields:
+        - crisis_scenarios: array
+        - response_protocols: object
+        - communication_templates: array
+        - escalation_matrix: object
+
+  node_11:
+    name: Calendar Integration
+    input_requirements:
+      - campaign_timeline: object
+      - content_variants: array
+    processing_logic:
+      - load_hijri_calendar
+      - identify_national_events
+      - map_seasonal_patterns
+      - recommend_posting_schedule
+      - identify_conflicts
+    output_format:
+      type: CalendarIntegration
+      fields:
+        - annual_calendar: array
+        - posting_recommendations: object
+        - seasonal_opportunities: array
+        - conflict_alerts: array
+
+  node_12:
+    name: Voice Guidelines
+    input_requirements:
+      - dialect_profile: object
+      - content_variants: array
+      - brand_positioning: object
+    processing_logic:
+      - define_voice_dimensions
+      - create_tone_matrix
+      - generate_vocabulary_guide
+      - create_examples_antiexamples
+      - define_guardrails
+    output_format:
+      type: VoiceGuidelines
+      fields:
+        - brand_voice_definition: object
+        - tone_matrix: object
+        - vocabulary_guide: array
+        - examples: array
+        - anti_examples: array
+        - guardrails: array
+
+  node_13:
+    name: Strategic Brief
+    input_requirements:
+      - all_previous_nodes_output: object
+      - business_context: object
+      - strategic_objectives: array
+    processing_logic:
+      - synthesize_all_findings
+      - create_executive_summary
+      - formulate_recommendations
+      - define_success_criteria
+      - outline_next_steps
+    output_format:
+      type: StrategicBrief
+      fields:
+        - executive_summary: string
+        - key_findings: array
+        - recommendations: array
+        - success_criteria: object
+        - next_steps: array
+        - timeline: object
+
+# Quality Gates Configuration
+quality_gates:
+  gate_1:
+    name: authenticity_verification
+    input: content_variants
+    process: calculate_authenticity_score
+    threshold: 0.90
+    metric: confidence_score
+    failure_action: regenerate
+
+  gate_2:
+    name: compliance_check
+    input: compliance_verification_results
+    process: verify_all_compliance_areas
+    threshold: 1.0
+    metric: pass_fail
+    failure_action: escalate_to_legal
+
+  gate_3:
+    name: audience_alignment
+    input: content_variants
+    process: calculate_resonance_score
+    threshold: 0.80
+    metric: resonance_score
+    failure_action: adjust_messaging
+
+  gate_4:
+    name: platform_optimization
+    input: content_variants
+    process: verify_platform_compliance
+    threshold: 1.0
+    metric: format_compliance
+    failure_action: reformat_content
+
+  gate_5:
+    name: strategic_alignment
+    input: all_outputs
+    process: calculate_strategic_fit
+    threshold: 0.85
+    metric: fit_score
+    failure_action: strategic_review
+
+# Error Handling
+error_handling:
+  authenticity_gate_failure:
+    trigger: authenticity_score < 0.90
+    action: regenerate_content
+    retry_limit: 3
+    escalation: notify_content_lead
+
+  compliance_gate_failure:
+    trigger: compliance_score < 1.0
+    action: stop_publication
+    notify_immediately: true
+    escalation: notify_legal_officer
+
+  audience_alignment_failure:
+    trigger: resonance_score < 0.80
+    action: adjust_messaging
+    retry_limit: 2
+    escalation: notify_marketing_director
+
+  risk_assessment_red:
+    trigger: risk_level == RED
+    action: require_executive_approval
+    timeline_sla: immediate
+    escalation: notify_ceo
+
+---
+document_version: "2.0"
+last_updated: "2026-01-13"
+status: "production_ready"

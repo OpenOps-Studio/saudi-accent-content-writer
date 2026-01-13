@@ -1,0 +1,598 @@
+{
+  "workflow_registry": {
+    "version": "2.0",
+    "total_workflows": 6,
+    "profile": "SaudiAccentContentWriter",
+    "last_updated": "2026-01-13",
+    "workflows": [
+      {
+        "id": "content-creation-from-brief",
+        "name": "Content Creation from Brief",
+        "type": "composite",
+        "description": "Transform business brief into Saudi-authentic, compliant content variants across platforms",
+        "trigger": "content_brief_received",
+        "timeline_hours": 2,
+        "phases": [
+          {
+            "number": 1,
+            "name": "Brief Analysis & Dialect Mapping",
+            "duration_minutes": 30,
+            "inputs": ["business_brief", "audience_profile", "compliance_requirements"],
+            "outputs": ["dialect_mapping", "context_matrix", "compliance_precheck"],
+            "success_criteria": "Audience profile complete, platform aligned, no RED compliance flags"
+          },
+          {
+            "number": 2,
+            "name": "Authentic Voice Development",
+            "duration_minutes": 45,
+            "inputs": ["dialect_mapping", "brand_guidelines", "cultural_context"],
+            "outputs": ["voice_personas", "cultural_references", "tone_samples"],
+            "success_criteria": "Persona selected, cultural references appropriate, voice sample aligned"
+          },
+          {
+            "number": 3,
+            "name": "Content Generation",
+            "duration_minutes": 90,
+            "inputs": ["voice_personas", "platform_specs", "cultural_authenticity"],
+            "outputs": ["content_variants", "on_design_text", "performance_predictions"],
+            "success_criteria": "5 variants per platform generated, compliance checks passed, design direction complete"
+          },
+          {
+            "number": 4,
+            "name": "Testing & Optimization",
+            "duration_minutes": 45,
+            "inputs": ["content_variants", "historical_engagement", "platform_algorithms"],
+            "outputs": ["ab_testing_framework", "performance_prediction", "testing_timeline"],
+            "success_criteria": "Testing framework defined, prediction within baseline ±20%, timeline realistic"
+          },
+          {
+            "number": 5,
+            "name": "Compliance Final Verification",
+            "duration_minutes": 30,
+            "inputs": ["all_content", "compliance_frameworks", "legal_guidelines"],
+            "outputs": ["compliance_report", "risk_assessment", "launch_checklist"],
+            "success_criteria": "All content GREEN or YELLOW, no RED flags blocking, compliance report signed"
+          }
+        ],
+        "quality_gates": [
+          {
+            "name": "Audience Alignment",
+            "pass_criteria": "Audience profile complete, platform choice aligned, no RED compliance flags",
+            "fail_action": "Return to Phase 1 for additional research"
+          },
+          {
+            "name": "Voice Authenticity",
+            "pass_criteria": "Persona matches audience, cultural references appropriate, voice aligned with brand",
+            "fail_action": "Iterate voice personas until authentic"
+          },
+          {
+            "name": "Compliance",
+            "pass_criteria": "All content GREEN or YELLOW with quick remediation, no RED flags",
+            "fail_action": "Return content to Phase 3 for revision"
+          },
+          {
+            "name": "Performance Viability",
+            "pass_criteria": "Predicted engagement within baseline, clear CTA, metrics measurable",
+            "fail_action": "Revise content variants or adjust success metrics"
+          }
+        ],
+        "outputs": [
+          "content_variants_5_per_platform",
+          "compliance_report",
+          "ab_testing_framework",
+          "performance_prediction_dashboard",
+          "launch_checklist"
+        ],
+        "attribution": "© OpenOps Studio | Created by Mamdouh Aboammar"
+      },
+      {
+        "id": "multi-platform-adaptation",
+        "name": "Multi-Platform Copy Adaptation",
+        "type": "iterative",
+        "description": "Adapt core message across Instagram/TikTok/Snapchat/LinkedIn/X with platform-specific authenticity",
+        "trigger": "campaign_message_defined",
+        "timeline_hours": 1.5,
+        "phases": [
+          {
+            "number": 1,
+            "name": "Platform Profiling",
+            "duration_minutes": 15,
+            "inputs": ["platform_list", "audience_data", "algorithm_preferences"],
+            "outputs": ["platform_profiles", "algorithm_specs", "compliance_strictness"],
+            "success_criteria": "All platforms profiled with algorithm, content format, and compliance details"
+          },
+          {
+            "number": 2,
+            "name": "Core Message Deconstruction",
+            "duration_minutes": 15,
+            "inputs": ["campaign_message", "brand_values", "audience_insights"],
+            "outputs": ["core_promise", "proof_points", "cta_strategy", "emotional_triggers", "cultural_anchors"],
+            "success_criteria": "All 5 message elements identified and documented"
+          },
+          {
+            "number": 3,
+            "name": "Platform-Specific Adaptation",
+            "duration_minutes": 45,
+            "inputs": ["core_message_elements", "platform_profiles", "tone_guidelines"],
+            "outputs": [
+              "instagram_strategy",
+              "tiktok_strategy",
+              "snapchat_strategy",
+              "linkedin_strategy",
+              "x_strategy"
+            ],
+            "success_criteria": "Each platform has tailored hook, value, CTA, tone, and dialect specifications"
+          },
+          {
+            "number": 4,
+            "name": "Visual Direction Mapping",
+            "duration_minutes": 15,
+            "inputs": ["adapted_strategies", "brand_guidelines", "platform_specs"],
+            "outputs": ["visual_briefs_per_platform", "design_specifications", "color_palette_adaptations"],
+            "success_criteria": "Visual direction defined for each platform with specifications"
+          },
+          {
+            "number": 5,
+            "name": "Performance Monitoring Setup",
+            "duration_minutes": 15,
+            "inputs": ["adapted_content", "campaign_objectives", "platform_kpis"],
+            "outputs": ["kpi_definitions", "tracking_setup", "dashboard_specifications"],
+            "success_criteria": "Platform-specific KPIs defined, tracking configured"
+          }
+        ],
+        "quality_gates": [
+          {
+            "name": "Platform Alignment",
+            "pass_criteria": "Each platform has unique strategy reflecting algorithm and audience behavior",
+            "fail_action": "Iterate platform profiles with additional research"
+          },
+          {
+            "name": "Message Integrity",
+            "pass_criteria": "Core message preserved across platforms while adapting to platform norms",
+            "fail_action": "Reconstruct message deconstruction elements"
+          },
+          {
+            "name": "Authenticity per Platform",
+            "pass_criteria": "Each platform version feels native to that ecosystem",
+            "fail_action": "Revise adaptations for platform-specific language/tone"
+          }
+        ],
+        "outputs": [
+          "platform_specific_content_briefs",
+          "compliance_checklist_per_platform",
+          "performance_monitoring_setup",
+          "adaptive_strategy_framework"
+        ],
+        "attribution": "© OpenOps Studio | Created by Mamdouh Aboammar"
+      },
+      {
+        "id": "institutional-communication",
+        "name": "Institutional Communication Suite",
+        "type": "composite",
+        "description": "Generate governance-compliant institutional messaging for government/ministry/public sector",
+        "trigger": "institutional_brief_received",
+        "timeline_hours": 4,
+        "phases": [
+          {
+            "number": 1,
+            "name": "Institutional Context Analysis",
+            "duration_minutes": 30,
+            "inputs": ["institution_type", "communication_objective", "stakeholder_map", "risk_profile"],
+            "outputs": ["context_analysis", "regulatory_framework", "risk_assessment"],
+            "success_criteria": "Institutional context clear, regulatory requirements understood, risk profile defined"
+          },
+          {
+            "number": 2,
+            "name": "Messaging Architecture",
+            "duration_minutes": 45,
+            "inputs": ["context_analysis", "stakeholder_needs", "communication_objectives"],
+            "outputs": [
+              "master_statement",
+              "background_narrative",
+              "key_talking_points",
+              "stakeholder_narratives",
+              "qa_framework"
+            ],
+            "success_criteria": "Master statement clear, talking points supported by data, stakeholder narratives tailored"
+          },
+          {
+            "number": 3,
+            "name": "Multi-Format Content Development",
+            "duration_minutes": 120,
+            "inputs": ["messaging_architecture", "stakeholder_profiles", "media_landscape"],
+            "outputs": [
+              "official_announcement",
+              "social_media_suite",
+              "faq_documentation",
+              "media_talking_points",
+              "visual_content_brief",
+              "stakeholder_communications"
+            ],
+            "success_criteria": "All 6 content formats complete, consistent messaging across formats, platform-appropriate"
+          },
+          {
+            "number": 4,
+            "name": "Compliance & Legal Review",
+            "duration_minutes": 60,
+            "inputs": ["all_content", "legal_guidelines", "government_standards"],
+            "outputs": ["legal_review_report", "compliance_sign_off", "remediation_notes"],
+            "success_criteria": "Legal review complete, all content GREEN or YELLOW, no RED flags"
+          },
+          {
+            "number": 5,
+            "name": "Crisis Contingency Planning",
+            "duration_minutes": 30,
+            "inputs": ["communication_content", "stakeholder_scenarios", "media_landscape"],
+            "outputs": [
+              "negative_reaction_scenarios",
+              "alternative_messaging",
+              "escalation_protocols",
+              "media_response_templates",
+              "recovery_messaging"
+            ],
+            "success_criteria": "Contingency scenarios covered, response templates ready, escalation paths clear"
+          }
+        ],
+        "quality_gates": [
+          {
+            "name": "Institutional Alignment",
+            "pass_criteria": "Messaging aligns with institutional values, governance standards, communication protocols",
+            "fail_action": "Return to Phase 2 for messaging reconstruction"
+          },
+          {
+            "name": "Stakeholder Specificity",
+            "pass_criteria": "Each stakeholder segment has tailored narrative addressing their concerns/interests",
+            "fail_action": "Revise stakeholder narratives for specificity"
+          },
+          {
+            "name": "Legal Compliance",
+            "pass_criteria": "All content factually accurate, legally compliant, no regulatory violations",
+            "fail_action": "Remediate RED flags, resubmit for legal review"
+          }
+        ],
+        "outputs": [
+          "official_announcement_variants",
+          "social_media_content_calendar",
+          "faq_documentation",
+          "media_talking_points",
+          "visual_content_specifications",
+          "crisis_response_playbook"
+        ],
+        "attribution": "© OpenOps Studio | Created by Mamdouh Aboammar"
+      },
+      {
+        "id": "social-campaign-orchestration",
+        "name": "Social Media Campaign Orchestration",
+        "type": "continuous",
+        "description": "Coordinate multi-post campaign with sequential storytelling, engagement loops, platform optimization",
+        "trigger": "campaign_approved_for_execution",
+        "timeline_hours": null,
+        "phases": [
+          {
+            "number": 1,
+            "name": "Campaign Strategy",
+            "duration_days": 1,
+            "inputs": ["campaign_brief", "brand_objectives", "audience_data"],
+            "outputs": ["campaign_objective", "target_segments", "campaign_arc", "success_metrics"],
+            "success_criteria": "Campaign objective clear, audience segmented, arc compelling, metrics measurable"
+          },
+          {
+            "number": 2,
+            "name": "Content Architecture",
+            "duration_days": 2,
+            "inputs": ["campaign_strategy", "content_pillars", "engagement_opportunities"],
+            "outputs": [
+              "content_pillars",
+              "content_mix_model",
+              "sequential_story_arc",
+              "engagement_triggers"
+            ],
+            "success_criteria": "Content mix balanced (40/30/20/10), story arc compelling, engagement points defined"
+          },
+          {
+            "number": 3,
+            "name": "Content Production",
+            "duration_days": 5,
+            "inputs": ["content_architecture", "brand_assets", "platform_specs"],
+            "outputs": [
+              "visual_assets",
+              "copy_variants",
+              "on_design_text",
+              "caption_variations",
+              "engagement_prompts"
+            ],
+            "success_criteria": "All assets produced, copy variants per platform, captions optimized, CTAs clear"
+          },
+          {
+            "number": 4,
+            "name": "Audience Engagement Strategy",
+            "duration_days": 1,
+            "inputs": ["produced_content", "audience_behavior", "engagement_opportunities"],
+            "outputs": [
+              "comment_response_strategy",
+              "ugc_prompts",
+              "community_building_tactics",
+              "dm_response_protocols"
+            ],
+            "success_criteria": "Response strategy defined, engagement prompts compelling, protocols clear"
+          },
+          {
+            "number": 5,
+            "name": "Launch & Monitoring",
+            "duration_days": null,
+            "inputs": ["all_content", "audience_schedule", "performance_targets"],
+            "outputs": [
+              "publishing_schedule",
+              "real_time_engagement",
+              "performance_metrics",
+              "messaging_adaptations"
+            ],
+            "success_criteria": "Content published on schedule, engagement response timely, metrics tracked continuously"
+          }
+        ],
+        "quality_gates": [
+          {
+            "name": "Strategic Alignment",
+            "pass_criteria": "Campaign objective clear, arc compelling, success metrics measurable and realistic",
+            "fail_action": "Return to Phase 1 for strategy refinement"
+          },
+          {
+            "name": "Content Quality",
+            "pass_criteria": "All content authentic, compliant, platform-optimized, compelling CTAs",
+            "fail_action": "Revise content or re-produce assets"
+          },
+          {
+            "name": "Engagement Readiness",
+            "pass_criteria": "Community management protocols defined, response templates prepared, monitoring configured",
+            "fail_action": "Finalize engagement strategy before launch"
+          }
+        ],
+        "outputs": [
+          "campaign_strategy_document",
+          "content_production_brief",
+          "social_media_calendar",
+          "engagement_response_guidelines",
+          "performance_monitoring_dashboard"
+        ],
+        "attribution": "© OpenOps Studio | Created by Mamdouh Aboammar"
+      },
+      {
+        "id": "crisis-communication",
+        "name": "Crisis Communication Management",
+        "type": "event-driven",
+        "description": "Manage brand reputation during negative events with authentic, culturally sensitive, compliant messaging",
+        "trigger": "crisis_detected",
+        "timeline_hours": 4,
+        "phases": [
+          {
+            "number": 1,
+            "name": "Crisis Detection",
+            "duration_minutes": 0,
+            "inputs": ["social_monitoring", "news_feeds", "sentiment_analysis"],
+            "outputs": ["crisis_alert", "severity_level", "initial_assessment"],
+            "success_criteria": "Crisis detected, severity classified (Green/Yellow/Orange/Red), assessment complete"
+          },
+          {
+            "number": 2,
+            "name": "Rapid Assessment",
+            "duration_minutes": 30,
+            "inputs": ["crisis_alert", "brand_data", "audience_data"],
+            "outputs": [
+              "root_cause",
+              "affected_segments",
+              "misinformation_audit",
+              "regulatory_implications",
+              "internal_alignment_needs"
+            ],
+            "success_criteria": "Root cause identified, affected audiences clear, regulatory impact understood"
+          },
+          {
+            "number": 3,
+            "name": "Response Strategy",
+            "duration_minutes": null,
+            "inputs": ["severity_level", "assessment_results"],
+            "outputs": [
+              "response_protocol",
+              "communication_channels",
+              "timing_strategy",
+              "escalation_plan"
+            ],
+            "success_criteria": "Response strategy appropriate to severity, channels selected, timing optimized"
+          },
+          {
+            "number": 4,
+            "name": "Message Development",
+            "duration_minutes": 60,
+            "inputs": ["response_strategy", "cultural_guidelines", "audience_sensitivity"],
+            "outputs": [
+              "holding_statement",
+              "accountability_message",
+              "action_commitment",
+              "recovery_timeline"
+            ],
+            "success_criteria": "Messages authentic, culturally appropriate, legally compliant, emotionally resonant"
+          },
+          {
+            "number": 5,
+            "name": "Execution & Recovery",
+            "duration_days": null,
+            "inputs": ["crisis_messages", "monitoring_plan", "recovery_strategy"],
+            "outputs": [
+              "published_statements",
+              "engagement_responses",
+              "recovery_content",
+              "post_crisis_analysis"
+            ],
+            "success_criteria": "Statements published timely, responses authentic, recovery initiated, analysis complete"
+          }
+        ],
+        "severity_levels": {
+          "level_1_green": {
+            "mention_threshold": "<100",
+            "response_time": "24 hours",
+            "action": "Monitor, document, prepare holding statement"
+          },
+          "level_2_yellow": {
+            "mention_threshold": "100-1000",
+            "response_time": "4 hours",
+            "action": "Acknowledge in comments, private outreach, holding statement"
+          },
+          "level_3_orange": {
+            "mention_threshold": "1000-10000",
+            "response_time": "1-2 hours",
+            "action": "Public statement, multi-platform comms, media outreach, daily updates"
+          },
+          "level_4_red": {
+            "mention_threshold": ">10000",
+            "response_time": "< 30 minutes",
+            "action": "Full crisis protocol, executive statement, press release, continuous monitoring"
+          }
+        },
+        "quality_gates": [
+          {
+            "name": "Severity Assessment",
+            "pass_criteria": "Crisis severity accurately classified, response level appropriate",
+            "fail_action": "Re-assess crisis severity and adjust response"
+          },
+          {
+            "name": "Message Authenticity",
+            "pass_criteria": "Messages feel authentic (not corporate apology), culturally appropriate, legally compliant",
+            "fail_action": "Revise messages for authenticity and cultural alignment"
+          },
+          {
+            "name": "Timing Appropriateness",
+            "pass_criteria": "Response published within severity-appropriate timeline",
+            "fail_action": "Accelerate response or escalate if delayed"
+          }
+        ],
+        "outputs": [
+          "crisis_communication_protocol",
+          "pre_written_holding_statements",
+          "message_templates",
+          "recovery_plan",
+          "post_crisis_analysis"
+        ],
+        "attribution": "© OpenOps Studio | Created by Mamdouh Aboammar"
+      },
+      {
+        "id": "regional-expansion",
+        "name": "Regional Expansion & Localization",
+        "type": "iterative",
+        "description": "Adapt Saudi-perfected content for Gulf markets (UAE, Kuwait, Qatar, Bahrain) with market-specific authenticity",
+        "trigger": "expansion_brief_approved",
+        "timeline_hours": null,
+        "phases": [
+          {
+            "number": 1,
+            "name": "Market Analysis",
+            "duration_days": 5,
+            "inputs": ["target_markets", "baseline_content", "brand_strategy"],
+            "outputs": [
+              "market_profiles",
+              "dialect_characteristics",
+              "cultural_preferences",
+              "platform_dominance",
+              "regulatory_environment",
+              "competitive_analysis",
+              "partnership_opportunities"
+            ],
+            "success_criteria": "Each market thoroughly analyzed, competitive landscape understood, opportunities identified"
+          },
+          {
+            "number": 2,
+            "name": "Dialect Adaptation",
+            "duration_days": 5,
+            "inputs": ["saudi_content", "market_profiles", "dialect_guidelines"],
+            "outputs": [
+              "localized_copy",
+              "regional_references",
+              "platform_optimizations",
+              "influencer_mapping"
+            ],
+            "success_criteria": "Content authentically adapted to each market, references feel natural, dialects appropriate"
+          },
+          {
+            "number": 3,
+            "name": "Localized Strategy Development",
+            "duration_days": 5,
+            "inputs": ["market_analysis", "adapted_content", "brand_strategy"],
+            "outputs": [
+              "market_messaging_frameworks",
+              "platform_priority_rankings",
+              "influencer_strategies",
+              "community_engagement_plans",
+              "execution_timelines"
+            ],
+            "success_criteria": "Strategy specific to each market, platform priorities justified, timelines realistic"
+          },
+          {
+            "number": 4,
+            "name": "Content Adaptation",
+            "duration_days": 7,
+            "inputs": ["localized_strategy", "market_specific_guidelines"],
+            "outputs": [
+              "market_specific_messaging",
+              "visual_adaptations",
+              "platform_tactics",
+              "local_cta_strategies"
+            ],
+            "success_criteria": "All content adapted, visuals market-appropriate, tactics platform-optimized, CTAs localized"
+          },
+          {
+            "number": 5,
+            "name": "Soft Launch & Testing",
+            "duration_days": 14,
+            "inputs": ["adapted_content", "beta_audience", "testing_framework"],
+            "outputs": [
+              "beta_launch_results",
+              "feedback_analysis",
+              "engagement_patterns",
+              "refined_messaging",
+              "launch_readiness_assessment"
+            ],
+            "success_criteria": "Beta results analyzed, learnings documented, content refined, ready for full launch"
+          }
+        ],
+        "market_dialect_guidelines": {
+          "uae": "40% UAE dialect + 40% Saudi + 20% MSA (cosmopolitan blend)",
+          "kuwait": "50% Kuwaiti + 30% Saudi + 20% MSA (Gulf-centric)",
+          "qatar": "45% Qatari + 35% Saudi + 20% MSA (regional identity)",
+          "bahrain": "40% Bahraini + 40% Saudi + 20% MSA (bridge culture)"
+        },
+        "quality_gates": [
+          {
+            "name": "Market Research Depth",
+            "pass_criteria": "Each market thoroughly analyzed, local insights documented, competitive landscape understood",
+            "fail_action": "Conduct additional market research"
+          },
+          {
+            "name": "Dialect Authenticity",
+            "pass_criteria": "Content feels native to each market, dialects appropriate, cultural references resonate",
+            "fail_action": "Revise dialect adaptations with local expert input"
+          },
+          {
+            "name": "Beta Performance",
+            "pass_criteria": "Beta engagement meets or exceeds baseline, feedback positive, learnings applied",
+            "fail_action": "Iterate content and messaging based on beta feedback"
+          }
+        ],
+        "outputs": [
+          "market_specific_content_adaptations",
+          "regional_strategy_documents",
+          "localized_influencer_maps",
+          "beta_launch_results",
+          "full_launch_calendar"
+        ],
+        "attribution": "© OpenOps Studio | Created by Mamdouh Aboammar"
+      }
+    ]
+  },
+  "metadata": {
+    "created_by": "Mamdouh Aboammar",
+    "email": "me@mamdouhaboammar.com",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar",
+    "whatsapp": "https://wa.me/+201092677269",
+    "organization": "OpenOps Studio",
+    "last_updated": "2026-01-13"
+  }
+}

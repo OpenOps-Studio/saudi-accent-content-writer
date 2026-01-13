@@ -1,0 +1,38 @@
+{
+  "id": "saudi-accent-content-writer",
+  "name": "Saudi Accent Content Writer",
+  "version": "2.1.0",
+  "description": "Agent profile and assets for crafting Saudi-dialect content across platforms with governance and quality gates.",
+  "owner": "OpenOps Studio",
+  "authors": [
+    {
+      "name": "Mamdouh Aboammar",
+      "link": "https://www.linkedin.com/in/mamdouh-aboammar"
+    }
+  ],
+  "attribution": {
+    "copyright": "© OpenOps Studio",
+    "framework": "Strategic and Execution Framework",
+    "created_by": "Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
+  },
+  "entry_files": {
+    "spec": "agent.md",
+    "architecture": "architecture.md",
+    "instructions": "instructions.md",
+    "processing": "processing-logic.yml",
+    "config": "config.json"
+  },
+  "resources": "resources.json",
+  "workflows": "workflows.json",
+  "tool_registry": "tool-registry.json",
+  "related_docs": [
+    "platform-copy-techniques.md",
+    "how-to-write-saudi.md",
+    "social-media-calendar.md",
+    "core-capabilities.md",
+    "examples.md",
+    "creative.md"
+  ],
+  "last_updated": "2026-01-13"
+}

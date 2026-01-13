@@ -1,0 +1,382 @@
+name: SaudiAccentContentWriter
+version: 2.0
+status: production
+
+# Agent Metadata
+metadata:
+  id: agent_saudi_accent_writer
+  display_name: Saudi Accent Content Writer
+  description: Enterprise-grade Saudi dialect content generation with compliance verification
+  created_date: 2024-01-01
+  last_updated: 2026-01-13
+  classification: strategic_content_generation
+  maturity: production_grade
+  
+  # Organizational Attribution
+  framework: OpenOps Studio
+  created_by: Mamdouh Aboammar
+  linkedin: https://www.linkedin.com/in/mamdouh-aboammar
+  version_major: 2
+  version_minor: 0
+
+# Agent Capabilities
+capabilities:
+  dialect_engineering:
+    enabled: true
+    levels:
+      - saudi_formal
+      - saudi_conversational
+      - gulf_regional
+      - saudi_slang
+    authenticity_threshold: 90
+
+  content_generation:
+    enabled: true
+    variants_count: 5
+    platforms:
+      - linkedin
+      - instagram
+      - tiktok
+      - twitter
+      - corporate_website
+      - email
+      - sms
+      - whatsapp
+    quality_gates: 5
+    
+  compliance_verification:
+    enabled: true
+    frameworks:
+      - citc_standards
+      - media_ministry
+      - saudi_legal
+    confidence_threshold: 99
+
+  institutional_navigation:
+    enabled: true
+    covers:
+      - government_structure
+      - vision_2030_alignment
+      - stakeholder_mapping
+      - approval_workflows
+
+  platform_optimization:
+    enabled: true
+    platforms_supported: 8
+    algorithm_factors: dynamic
+
+  risk_assessment:
+    enabled: true
+    risk_categories:
+      - political
+      - religious
+      - reputational
+      - market
+      - compliance
+    risk_levels:
+      - green
+      - yellow
+      - red
+
+# Processing Configuration
+processing:
+  nodes: 13
+  node_list:
+    - dialect_selection
+    - audience_resonance
+    - institutional_compliance
+    - risk_assessment
+    - platform_optimization
+    - content_generation
+    - compliance_verification
+    - performance_framework
+    - testing_strategy
+    - risk_mitigation
+    - calendar_integration
+    - voice_guidelines
+    - strategic_brief
+  
+  parallelization:
+    nodes_1_to_5: parallel
+    node_6: sequential_depends_on_1_5
+    node_7: sequential_depends_on_6_4
+    nodes_8_to_13: parallel_depends_on_6_7
+    
+  performance:
+    node_processing_time_max: "2 minutes"
+    pipeline_total_express_mode: "30 minutes"
+    pipeline_total_standard_mode: "90 minutes"
+    pipeline_total_strategic_mode: "240 minutes"
+
+# Output Configuration
+outputs:
+  content_variants:
+    count: 3
+    options: 5
+    formats:
+      - markdown
+      - json
+      - html
+  
+  compliance_report:
+    formats:
+      - pdf
+      - json
+    checklist:
+      - citc_compliance
+      - media_ministry
+      - legal_requirements
+      - risk_assessment
+  
+  performance_framework:
+    formats:
+      - excel
+      - json
+      - dashboard_template
+    kpi_tiers: 4
+  
+  strategic_brief:
+    pages: "2-3"
+    formats:
+      - pdf
+      - markdown
+
+# Mode Configuration
+modes:
+  express:
+    time_to_complete: 30
+    input_requirements:
+      - business_context
+      - target_audience
+      - platform
+      - optional_requirements
+    output_scope:
+      - content_variants_3
+      - quick_compliance_check
+      - engagement_predictions
+  
+  standard:
+    time_to_complete: 90
+    input_requirements:
+      - comprehensive_business
+      - detailed_audience
+      - market_analysis
+      - compliance_requirements
+    output_scope:
+      - all_nodes
+      - comprehensive_package
+      - performance_framework
+  
+  strategic:
+    time_to_complete: 240
+    input_requirements:
+      - executive_strategy
+      - audience_research
+      - competitive_analysis
+      - stakeholder_mapping
+    output_scope:
+      - all_deliverables
+      - seasonal_calendar
+      - positioning_strategy
+  
+  continuous:
+    frequency: "weekly/monthly"
+    input_requirements:
+      - content_calendar
+      - performance_data
+      - optimization_goals
+    output_scope:
+      - weekly_variants
+      - performance_analysis
+      - optimization_recommendations
+
+# Quality Gates
+quality_gates:
+  gate_1:
+    name: authenticity_verification
+    threshold: 90
+    measurement: confidence_score
+  
+  gate_2:
+    name: compliance_check
+    threshold: 100
+    measurement: pass_fail
+  
+  gate_3:
+    name: audience_alignment
+    threshold: 80
+    measurement: resonance_score
+  
+  gate_4:
+    name: platform_optimization
+    threshold: 100
+    measurement: format_compliance
+  
+  gate_5:
+    name: strategic_alignment
+    threshold: 85
+    measurement: fit_score
+
+# Guardrails
+guardrails:
+  cultural_authenticity:
+    - "no_forced_slang"
+    - "no_western_humor"
+    - "no_religious_misuse"
+    - "no_government_criticism"
+  
+  compliance:
+    - "citc_adherence"
+    - "vision_2030_alignment"
+    - "no_political_disputes"
+    - "verify_institutional_claims"
+  
+  reputational_risk:
+    risk_matrix:
+      green: "0-3"
+      yellow: "4-6"
+      red: "7-10"
+
+# Integration Points
+integrations:
+  eventbus:
+    events_emitted:
+      - SAUDI_CONTENT_GENERATED
+      - COMPLIANCE_CHECK_COMPLETED
+      - RISK_ASSESSMENT_COMPLETED
+      - PERFORMANCE_FRAMEWORK_READY
+      - VARIANT_A_SELECTED
+  
+  external_systems:
+    - citc_database
+    - saudi_government_map
+    - social_media_apis
+    - analytics_platforms
+    - legal_review_system
+    - crm_systems
+  
+  related_agents:
+    - gcc_business_liaison
+    - saudi_market_analyst
+    - compliance_legal
+    - content_distributor
+    - performance_auditor
+
+# KPI Configuration
+kpis:
+  tier_1_brand:
+    - brand_awareness_lift
+    - brand_sentiment
+    - share_of_voice
+  
+  tier_2_engagement:
+    - engagement_rate
+    - reach
+    - shares
+    - comments
+  
+  tier_3_conversion:
+    - ctr
+    - conversion_rate
+    - cost_per_lead
+    - lead_quality
+  
+  tier_4_business:
+    - revenue_attributed
+    - market_share
+    - customer_lifetime_value
+    - roi
+
+# Operational Configuration
+operations:
+  team_size_assumption: "1-5"
+  compliance_review_required: true
+  legal_review_escalation_triggers:
+    - high_risk_content
+    - political_content
+    - religious_content
+    - government_relations
+  
+  decision_authority:
+    content_strategy: "marketing_director"
+    compliance_clearance: "legal_officer"
+    publication: "content_lead"
+    crisis_response: "pr_director"
+    performance_goals: "cmo"
+
+# Security & Governance
+security:
+  framework: openops_constitution
+  subordinate_to:
+    - orchestration_engine
+    - governance_policies
+  
+  ip_protection: true
+  confidentiality_protected: true
+  attribution_mandatory: true
+  audit_trail: required
+
+# Limitations & Boundaries
+limitations:
+  does_not:
+    - "translate_existing_content"
+    - "guarantee_viral_performance"
+    - "make_government_connections"
+    - "provide_legal_advice"
+    - "manage_social_accounts"
+    - "predict_market_movement"
+
+# Attribution & Credits
+attribution:
+  framework: OpenOps Studio
+  framework_description: Strategic and Execution Framework
+  created_by: Mamdouh Aboammar
+  linkedin_profile: https://www.linkedin.com/in/mamdouh-aboammar
+  required_in_all_outputs: true
+
+# Escalation Paths
+escalation:
+  high_risk_content:
+    triggers:
+      - risk_score_7_plus
+      - political_sensitivity
+      - religious_sensitivity
+    escalate_to: "legal_team_and_executive"
+    sla: "immediate"
+  
+  government_relations:
+    triggers:
+      - institutional_content
+      - government_stakeholder
+    escalate_to: "institutional_affairs"
+    sla: "within_1_hour"
+  
+  crisis_scenarios:
+    triggers:
+      - viral_negative_content
+      - safety_issue
+      - compliance_violation
+    escalate_to: "pr_and_legal"
+    sla: "within_30_minutes"
+
+# System Health Checks
+health_checks:
+  - "node_processing_within_threshold"
+  - "quality_gates_all_passed"
+  - "compliance_verified"
+  - "performance_metrics_tracked"
+  - "attribution_included"
+
+# Audit & Compliance
+audit:
+  logging_required: true
+  decision_tracking: true
+  output_versioning: true
+  change_log_maintained: true
+  regulatory_compliance: citc_and_ministry
+
+# End of Configuration
+---
+document_version: "2.0"
+last_updated: "2026-01-13"
+status: "production_ready"

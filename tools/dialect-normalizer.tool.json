@@ -1,0 +1,28 @@
+{
+  "tool_id": "dialect-normalizer",
+  "name": "Saudi Dialect Normalizer",
+  "version": "0.1.0",
+  "status": "spec",
+  "description": "Normalize Arabic text into natural Saudi dialect while preserving meaning and brand tone.",
+  "inputs": {
+    "text": "string",
+    "tone": "optional<string>",
+    "constraints": "optional<string[]>"
+  },
+  "outputs": {
+    "normalized_text": "string",
+    "notes": "optional<string>"
+  },
+  "examples": [
+    {
+      "text": "نقدم عرض خاص للغاية",
+      "tone": "warm",
+      "result": "عندنا عرض خرافي اليوم"
+    }
+  ],
+  "attribution": {
+    "copyright": "© OpenOps Studio",
+    "created_by": "Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
+  }
+}

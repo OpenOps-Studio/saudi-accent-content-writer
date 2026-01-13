@@ -1,0 +1,22 @@
+{
+  "tool_id": "compliance-evaluator",
+  "name": "Compliance Evaluator (Claims/Pricing/Seasonal)",
+  "version": "0.1.0",
+  "status": "spec",
+  "description": "Check captions and posts for compliance issues: absolute claims, medical claims, pricing/discount accuracy, seasonal/religious sensitivity.",
+  "inputs": {
+    "text": "string",
+    "locale": "sa",
+    "checks": "optional<string[]>"
+  },
+  "outputs": {
+    "issues": "array<{severity:string, rule:string, message:string, suggestion?:string}>",
+    "score": "number"
+  },
+  "references": ["../instructions.md", "../examples.md"],
+  "attribution": {
+    "copyright": "© OpenOps Studio",
+    "created_by": "Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
+  }
+}

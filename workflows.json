@@ -1,0 +1,58 @@
+{
+  "version": "2.1",
+  "workflows": [
+    {
+      "id": "generate_captions",
+      "name": "Generate Multi-Platform Captions (Saudi)",
+      "inputs": ["brand_tone", "offer", "audience", "platforms[]"],
+      "steps": [
+        "NormalizeBrief",
+        "DialectGuard",
+        "CaptionSynthesis",
+        "PlatformFit",
+        "ComplianceCheck",
+        "CTAInsertion",
+        "FinalizePackage"
+      ],
+      "outputs": ["captions_by_platform", "hashtags", "on_design_text_suggestions"],
+      "quality_gates": ["Dialect", "Compliance", "PlatformFit"]
+    },
+    {
+      "id": "write_linkedin_post",
+      "name": "Write LinkedIn Post/Article (Saudi Pro Tone)",
+      "inputs": ["topic", "insights", "evidence", "cta"],
+      "steps": [
+        "OutlineBuild",
+        "SaudiProToneAdjust",
+        "EvidenceAttach",
+        "ComplianceCheck",
+        "FormatForLinkedIn"
+      ],
+      "outputs": ["post", "article_outline"],
+      "quality_gates": ["Accuracy", "Compliance", "Readability"]
+    },
+    {
+      "id": "build_calendar",
+      "name": "Build Social Media Calendar",
+      "inputs": ["brand", "month", "strategic_themes[]", "priority_platforms[]"],
+      "steps": [
+        "ThemeSpread",
+        "IdeaGenerator",
+        "CaptionSynthesis",
+        "DesignIdeaMap",
+        "KPIAssign",
+        "CalendarAssemble",
+        "ReviewAndGate"
+      ],
+      "outputs": ["yaml_calendar", "csv_headers", "weekly_breakdown"],
+      "quality_gates": ["Coverage", "Dialect", "Compliance", "PlatformFit"]
+    }
+  ],
+  "attribution": {
+    "copyright": "© OpenOps Studio",
+    "framework": "Strategic and Execution Framework",
+    "created_by": "Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
+  },
+  "last_updated": "2026-01-13"
+}

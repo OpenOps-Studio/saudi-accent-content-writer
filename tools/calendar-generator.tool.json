@@ -1,0 +1,25 @@
+{
+  "tool_id": "calendar-generator",
+  "name": "Social Calendar Generator",
+  "version": "0.1.0",
+  "status": "spec",
+  "description": "Generate a YAML/CSV-friendly monthly content calendar from a short brief.",
+  "inputs": {
+    "brand": "string",
+    "month": "YYYY-MM",
+    "strategic_themes": "array<string>",
+    "priority_platforms": "array<string>",
+    "cadence_per_week": "optional<number>"
+  },
+  "outputs": {
+    "yaml_calendar": "string",
+    "csv_headers": "string",
+    "weekly_breakdown": "array<string>"
+  },
+  "references": ["../social-media-calendar.md"],
+  "attribution": {
+    "copyright": "© OpenOps Studio",
+    "created_by": "Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
+  }
+}

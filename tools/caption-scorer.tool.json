@@ -1,0 +1,20 @@
+{
+  "tool_id": "caption-scorer",
+  "name": "Caption Scorer (Dialect/Platform/CTA)",
+  "version": "0.1.0",
+  "status": "spec",
+  "description": "Score generated captions on dialect naturalness, platform fit, clarity, and CTA strength.",
+  "inputs": {
+    "platform": "instagram|snapchat|x|linkedin",
+    "caption": "string"
+  },
+  "outputs": {
+    "scores": "{dialect:number, platform_fit:number, clarity:number, cta:number}",
+    "suggestions": "array<string>"
+  },
+  "attribution": {
+    "copyright": "© OpenOps Studio",
+    "created_by": "Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
+  }
+}

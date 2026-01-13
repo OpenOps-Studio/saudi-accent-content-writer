@@ -1,0 +1,38 @@
+{
+  "version": "2.1",
+  "style_guides": [
+    { "title": "Saudi Dialect How-To", "path": "how-to-write-saudi.md" },
+    { "title": "Platform Copy Techniques", "path": "platform-copy-techniques.md" }
+  ],
+  "templates": [
+    { "title": "Social Media Calendar", "path": "social-media-calendar.md" }
+  ],
+  "examples": [
+    { "title": "Examples & Case Studies", "path": "examples.md" }
+  ],
+  "benchmarks": [
+    { "title": "Creative References (Saudi Accounts)", "path": "creative.md" }
+  ],
+  "external": {
+    "apis": [
+      { "name": "Meta Marketing API", "url": "https://developers.facebook.com/docs/marketing-apis" },
+      { "name": "Snapchat Marketing API", "url": "https://marketingapi.snapchat.com/docs/" },
+      { "name": "X API (v2)", "url": "https://developer.x.com/en/docs/twitter-api" },
+      { "name": "LinkedIn Marketing", "url": "https://learn.microsoft.com/linkedin/marketing/" }
+    ]
+  },
+  "setup": [
+    { "title": "Gemini Setup Guide", "path": "setup.gemini.md" },
+    { "title": "Gem Instructions JSON", "path": "Instruction.json" }
+  ],
+  "helpers": [
+    { "title": "Calendar Helper Script", "path": "calendar-from-brief.mjs" }
+  ],
+  "attribution": {
+    "copyright": "© OpenOps Studio",
+    "framework": "Strategic and Execution Framework",
+    "created_by": "Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
+  },
+  "last_updated": "2026-01-13"
+}

@@ -1,0 +1,83 @@
+{
+  "tool_registry": {
+    "version": "1.0.0",
+    "last_updated": "2026-01-13",
+    "total_tools": 5
+  },
+  "tools_by_category": {
+    "language_and_tone": [
+      {
+        "tool_id": "dialect-normalizer",
+        "name": "Saudi Dialect Normalizer",
+        "file_path": "tools/dialect-normalizer.tool.json",
+        "status": "spec",
+        "language": "typescript"
+      }
+    ],
+    "caption_generation": [
+      {
+        "tool_id": "caption-synthesizer",
+        "name": "Caption Synthesizer (Hook→Value→CTA)",
+        "file_path": "tools/caption-synthesizer.tool.json",
+        "status": "spec",
+        "language": "typescript"
+      },
+      {
+        "tool_id": "hashtag-recommender-ar",
+        "name": "Arabic Hashtag Recommender",
+        "file_path": "tools/hashtag-recommender-ar.tool.json",
+        "status": "spec",
+        "language": "python"
+      }
+    ],
+    "compliance": [
+      {
+        "tool_id": "compliance-evaluator",
+        "name": "Compliance Evaluator (Claims/Pricing/Seasonal)",
+        "file_path": "tools/compliance-evaluator.tool.json",
+        "status": "spec",
+        "language": "typescript"
+      }
+    ],
+    "calendar": [
+      {
+        "tool_id": "calendar-generator",
+        "name": "Social Calendar Generator",
+        "file_path": "tools/calendar-generator.tool.json",
+        "status": "spec",
+        "language": "typescript"
+      }
+    ],
+    "scoring": [
+      {
+        "tool_id": "caption-scorer",
+        "name": "Caption Scorer (Dialect/Platform/CTA)",
+        "file_path": "tools/caption-scorer.tool.json",
+        "status": "spec",
+        "language": "python"
+      }
+    ]
+  },
+  "integration_guides": {
+    "meta_marketing_api": {
+      "api_documentation": "https://developers.facebook.com/docs/marketing-apis",
+      "authentication": "OAuth 2.0",
+      "recommended_use": "Instagram management for KSA"
+    },
+    "snapchat_marketing_api": {
+      "api_documentation": "https://marketingapi.snapchat.com/docs/",
+      "authentication": "OAuth 2.0",
+      "recommended_use": "Snap Ads for Saudi audience"
+    },
+    "x_api": {
+      "api_documentation": "https://developer.x.com/en/docs/twitter-api",
+      "authentication": "Bearer Token",
+      "recommended_use": "Thread publishing and analytics"
+    },
+    "linkedin_marketing": {
+      "api_documentation": "https://learn.microsoft.com/linkedin/marketing/",
+      "authentication": "OAuth 2.0",
+      "recommended_use": "LinkedIn posts/articles scheduling"
+    }
+  }
+}

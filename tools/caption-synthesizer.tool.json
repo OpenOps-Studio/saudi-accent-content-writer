@@ -1,0 +1,25 @@
+{
+  "tool_id": "caption-synthesizer",
+  "name": "Caption Synthesizer (Hook→Value→CTA)",
+  "version": "0.1.0",
+  "status": "spec",
+  "description": "Generate platform-ready captions in Saudi dialect following Hook→Value→CTA.",
+  "inputs": {
+    "platform": "instagram|snapchat|x|linkedin",
+    "brief": "string",
+    "tone": "optional<string>",
+    "variants": "optional<number>"
+  },
+  "outputs": {
+    "captions": "array<string>",
+    "hashtags": "array<string>",
+    "on_design_text": "string",
+    "cta": "string"
+  },
+  "references": ["../platform-copy-techniques.md"],
+  "attribution": {
+    "copyright": "© OpenOps Studio",
+    "created_by": "Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
+  }
+}

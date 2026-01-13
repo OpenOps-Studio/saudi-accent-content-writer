@@ -1,0 +1,877 @@
+/**
+ * Saudi Accent Content Writer - Advanced Workflows (Pseudocode)
+ * Version: 2.0
+ * Scope: Content creation from brief, multi-platform adaptation, institutional communications, crisis management
+ * 
+ * © OpenOps Studio | Created by Mamdouh Aboammar | https://www.linkedin.com/in/mamdouh-aboammar
+ */
+
+// ============================================================================
+// WORKFLOW 1: CONTENT CREATION FROM BRIEF
+// ============================================================================
+
+function createContentFromBrief(businessBrief) {
+  
+  /**
+   * Phase 1: Brief Analysis & Dialect Mapping (30 minutes)
+   */
+  class Phase1_BriefAnalysis {
+    
+    function parseBusinessContext(brief) {
+      context = {
+        type: brief.type,  // institutional, commercial, social
+        audience: brief.targetAudience,
+        platforms: brief.platforms,
+        objective: brief.objective,
+        riskLevel: brief.riskLevel  // low, medium, high, critical
+      }
+      return context
+    }
+    
+    function analyzeAudienceProfile(audience) {
+      analysis = {
+        age_range: audience.ageRange,
+        education_level: audience.educationLevel,
+        region: audience.region,  // saudi_central, gulf_region, saudi_north, etc.
+        platform_preference: audience.platformPreference,
+        dialect_comfort: audience.dialectComfort,  // MSA, saudi_colloquial, gulf_blend
+        income_level: audience.incomeLevel,
+        values: audience.culturalValues
+      }
+      return analysis
+    }
+    
+    function runCompliancePrecheck(brief, audience) {
+      precheck = {
+        citc_alignment: verifyCITCGuidelines(brief),
+        media_ministry: verifyMediaMinistry(brief),
+        platform_policies: verifyPlatformCompliance(brief.platforms),
+        sensitivity_flags: detectSensitiveTopics(brief)
+      }
+      
+      IF any_red_flags(precheck) THEN
+        return {status: BLOCKED, flags: precheck}
+      ELSE
+        return {status: PROCEED, precheck: precheck}
+    }
+    
+    function mapDialectBlend(context, audience, compliancePrecheck) {
+      dialectMapping = SWITCH context.type:
+        CASE institutional:
+          IF government_facing(context) THEN
+            blend = {saudi: 0.2, msa: 0.8}  // Formal government
+          ELSE
+            blend = {saudi: 0.3, msa: 0.7}  // Professional institutional
+        
+        CASE commercial:
+          IF social_media(context) THEN
+            blend = {saudi: 0.7, msa: 0.3}  // Conversational
+          ELSE
+            blend = {saudi: 0.5, msa: 0.5}  // Balanced commercial
+        
+        CASE social:
+          IF youth_audience(audience.ageRange) THEN
+            blend = {saudi: 0.85, msa: 0.15, slang: 0.1}  // Contemporary
+          ELSE
+            blend = {saudi: 0.6, msa: 0.4}  // Accessible
+      
+      RETURN dialectMapping
+    }
+    
+    function applyGate1_AudienceAlignment(analysis, dialectMapping) {
+      gate = {
+        audience_profile_complete: analysis != null AND all_fields_populated(analysis),
+        platform_alignment: validatePlatformChoice(analysis.platform_preference),
+        compliance_red_flags: countRedFlags(analysis.compliance) == 0
+      }
+      
+      IF all_gates_pass(gate) THEN
+        return APPROVED
+      ELSE
+        return {status: REJECTED, failed_gates: gate}
+    }
+  }
+  
+  /**
+   * Phase 2: Authentic Voice Development (45 minutes)
+   */
+  class Phase2_VoiceDevelopment {
+    
+    function generateVoicePersonas(dialectMapping, audience) {
+      personas = []
+      
+      // Al-Wadoud: Warm, Relatable
+      IF audience.type == "consumer" OR context.objective == "engagement" THEN
+        alWadoud = {
+          id: "al_wadoud",
+          tone: "warm_relatable",
+          language_features: [
+            "conversational_openings",
+            "personal_anecdotes",
+            "emotional_connection",
+            "saudi_colloquial_blend"
+          ],
+          best_for: ["consumer_brands", "social_causes", "lifestyle"],
+          example_opening: "خلينا نحكي معك عن حاجة مهمة..."
+        }
+        personas.push(alWadoud)
+      
+      // Al-Khabir: Expert Authority
+      IF audience.type == "institutional" OR context.objective == "authority" THEN
+        alKhabir = {
+          id: "al_khabir",
+          tone: "expert_authority",
+          language_features: [
+            "data_driven",
+            "formal_msa",
+            "credential_emphasis",
+            "structured_reasoning",
+            "institutional_terminology"
+          ],
+          best_for: ["government", "institutions", "professional_communications"],
+          example_opening: "استناداً للبيانات والدراسات..."
+        }
+        personas.push(alKhabir)
+      
+      // Al-Mu'asser: Trendsetter
+      IF audience.ageRange < 30 OR context.objective == "virality" THEN
+        alMuasser = {
+          id: "al_muasser",
+          tone: "trendy_innovative",
+          language_features: [
+            "contemporary_saudi_slang",
+            "cultural_references",
+            "humor_and_wit",
+            "platform_native_language",
+            "trend_awareness"
+          ],
+          best_for: ["youth_brands", "innovation_narratives", "social_media"],
+          example_opening: "سمعت عن الحاجة الجديدة دي..."
+        }
+        personas.push(alMuasser)
+      
+      return personas
+    }
+    
+    function developCulturalReferences(personas, audience, context) {
+      references = PARALLEL_FOR each persona in personas:
+        personaReferences = {
+          quranic: selectQuranicReferences(context.sensitivity),  // Only if appropriate
+          national_pride: selectNationalPrideElements(audience.region),
+          gulf_context: selectGulfRegionalContext(audience.region),
+          universal_values: selectUniversalHumanValues(),
+          local_events: selectRecentLocalEvents(audience.region),
+          brand_story: mapBrandStoryElements(context.brand)
+        }
+        
+        RETURN personaReferences
+      
+      return references
+    }
+    
+    function createToneSamples(personas, references) {
+      samples = []
+      
+      FOR each persona in personas:
+        FOR culturalRef in references[persona.id]:
+          sample = {
+            persona_id: persona.id,
+            reference: culturalRef,
+            sample_opening: generateSampleOpening(persona, culturalRef),
+            sample_middle: generateSampleValue(persona, culturalRef),
+            sample_closing: generateSampleCTA(persona, culturalRef),
+            authenticity_score: calculateAuthenticityScore(sample)
+          }
+          samples.push(sample)
+      
+      return samples
+    }
+    
+    function applyGate2_VoiceAuthenticity(personas, toneSamples) {
+      gate = {
+        persona_matches_audience: validatePersonaAudienceFit(personas, audience),
+        cultural_references_appropriate: validateCulturalRelevance(toneSamples),
+        voice_aligned_brand: validateBrandVoiceAlignment(toneSamples, context.brand),
+        native_speaker_approval: requiresNativeSpeakerReview(toneSamples)
+      }
+      
+      IF all_gates_pass(gate) THEN
+        return APPROVED
+      ELSE
+        return {status: REJECTED, reason: gate}
+    }
+  }
+  
+  /**
+   * Phase 3: Content Generation (90 minutes)
+   */
+  class Phase3_ContentGeneration {
+    
+    function generateVariants(personas, toneSamples, platformSpecs) {
+      variants = PARALLEL_FOR each platform in businessBrief.platforms:
+        platformVariants = []
+        
+        FOR variantType in [HOOK, VALUE, ACTION, STORY, DATA]:
+          FOR personaId in personas.map(p => p.id):
+            FOR toneSample in toneSamples[personaId]:
+              
+              copy = generateCopy(
+                variantType,
+                personaId,
+                toneSample,
+                platformSpecs[platform],
+                businessBrief.message
+              )
+              
+              // Apply platform-specific formatting
+              copy = applyPlatformFormatting(copy, platform)
+              copy = embedCulturalAuthenticity(copy)
+              
+              // Add on-design text
+              copy.on_design_text = generateDesignText(copy, platform)
+              copy.optimal_posting_time = calculateOptimalTime(platform, audience)
+              
+              // Create caption variants
+              copy.caption_variants = generateCaptionVariants(copy, 3)
+              
+              platformVariants.push(copy)
+        
+        RETURN platformVariants
+      
+      return variants
+    }
+    
+    function performComplianceChecks(allVariants) {
+      complianceResults = []
+      
+      FOR each variant in allVariants:
+        checks = {
+          prohibited_claims: checkForProhibitedClaims(variant),
+          religious_sensitivity: checkReligiousReferences(variant),
+          regulatory_compliance: checkRegulatoryCompliance(variant),
+          platform_policies: checkPlatformPolicies(variant),
+          misleading_info: checkForMisleadingContent(variant)
+        }
+        
+        variant.compliance_status = DETERMINE_FLAG(checks)  // GREEN, YELLOW, RED
+        complianceResults.push(checks)
+      
+      RETURN complianceResults
+    }
+    
+    function generateDesignDirection(variants) {
+      directions = []
+      
+      FOR each variant in variants:
+        direction = {
+          visual_hook: describePrimaryVisual(variant),
+          color_psychology: recommendColors(variant.tone),
+          typography: recommendFonts(variant.platform),
+          layout_flow: describeLayoutFlow(variant),
+          call_to_action_placement: describeCTAPlacement(variant),
+          motion_suggestions: (IF video) describeDynamicElements(variant)
+        }
+        
+        directions.push(direction)
+      
+      RETURN directions
+    }
+  }
+  
+  /**
+   * Phase 4: Testing & Optimization (45 minutes)
+   */
+  class Phase4_Testing {
+    
+    function createABTestingFramework(variants) {
+      framework = {
+        test_pairs: [
+          {pair_1: HOOK_VARIANT, pair_2: VALUE_VARIANT, focus: "attention_capture"},
+          {pair_1: ACTION_VARIANT, pair_2: STORY_VARIANT, focus: "emotional_vs_direct"},
+          {pair_1: DATA_VARIANT, pair_2: HOOK_VARIANT, focus: "credibility_vs_intrigue"}
+        ],
+        sample_size: calculateSampleSize(audience.size),
+        confidence_level: 0.95,
+        minimum_runtime_days: 7,
+        success_metric: platform_specific_metric
+      }
+      return framework
+    }
+    
+    function generatePerformancePrediction(variants, historicalData) {
+      prediction = PARALLEL_FOR each variant in variants:
+        score = 0
+        
+        // Historical patterns
+        baselineScore = analyzeHistoricalPerformance(variant.type, platform)
+        score += baselineScore
+        
+        // Audience sentiment
+        sentimentBoost = analyzeAudienceSentiment(audience, variant.message)
+        score += sentimentBoost
+        
+        // Algorithm preference
+        algorithmBoost = evaluateAlgorithmPreference(platform, variant.format)
+        score += algorithmBoost
+        
+        // Competitive benchmarks
+        competitiveScore = compareWithCompetitors(variant.industry, variant.type)
+        score += competitiveScore
+        
+        prediction = {
+          variant_id: variant.id,
+          predicted_engagement_rate: score,
+          confidence_interval: calculateConfidenceInterval(score),
+          ranking: null  // Will be ranked after all calculated
+        }
+        
+        RETURN prediction
+      
+      // Rank predictions
+      predictions = predictions.sortBy("predicted_engagement_rate").reverse()
+      FOR i, prediction in predictions:
+        prediction.ranking = i + 1
+      
+      return predictions
+    }
+  }
+  
+  /**
+   * Phase 5: Compliance Final Verification (30 minutes)
+   */
+  class Phase5_ComplianceFinal {
+    
+    function runFullComplianceAudit(allContent) {
+      audit = {
+        citc_requirements: auditCITC(allContent),
+        media_ministry: auditMediaMinistry(allContent),
+        platform_policies: PARALLEL_FOR platform in platforms:
+          auditPlatformPolicies(allContent, platform),
+        brand_guidelines: auditBrandGuidelines(allContent)
+      }
+      
+      return audit
+    }
+    
+    function generateComplianceReport(audit) {
+      report = {
+        timestamp: NOW(),
+        total_content_pieces: audit.total_count,
+        green_count: audit.green_count,
+        yellow_count: audit.yellow_count,
+        red_count: audit.red_count,
+        findings: audit.findings,
+        remediation_recommendations: generateRemediations(audit.yellow_and_red),
+        escalations_required: filterEscalations(audit.red),
+        sign_off_required: audit.red_count > 0
+      }
+      return report
+    }
+    
+    function applyGate5_ComplianceFinal(report) {
+      gate = {
+        content_status: report.green_count + report.yellow_count == report.total_content_pieces,
+        red_flags_blocking: report.red_count == 0,
+        sign_off_obtained: report.sign_off_required == false OR compliance_officer_approved
+      }
+      
+      IF all_gates_pass(gate) THEN
+        return {status: APPROVED, report: report}
+      ELSE
+        return {status: REJECTED, report: report, failed_gates: gate}
+    }
+  }
+  
+  // EXECUTE WORKFLOW
+  phase1 = Phase1_BriefAnalysis()
+  phase2 = Phase2_VoiceDevelopment()
+  phase3 = Phase3_ContentGeneration()
+  phase4 = Phase4_Testing()
+  phase5 = Phase5_ComplianceFinal()
+  
+  return {
+    variants: phase3.variants,
+    compliance_report: phase5.report,
+    testing_framework: phase4.framework,
+    predictions: phase4.predictions,
+    launch_checklist: phase5.checklist
+  }
+}
+
+
+// ============================================================================
+// WORKFLOW 2: MULTI-PLATFORM COPY ADAPTATION
+// ============================================================================
+
+function adaptToPlatforms(coreMessage) {
+  
+  /**
+   * Phase 1: Platform Profiling
+   */
+  function profilePlatforms(platformList) {
+    profiles = PARALLEL_FOR each platform in platformList:
+      profile = {
+        platform_name: platform,
+        algorithm_type: getAlgorithmType(platform),  // engagement-first, virality-first, reach-first
+        content_format_dominance: getDominantFormats(platform),  // video, carousel, text, link
+        audience_behavior: getAudienceBehavior(platform),
+        compliance_strictness: getComplianceLevel(platform),
+        optimal_posting_times: calculateOptimalTimes(platform, audience),
+        engagement_patterns: getEngagementPatterns(platform, audience),
+        hashtag_effectiveness: getHashtagEffectiveness(platform)
+      }
+      RETURN profile
+    
+    return profiles
+  }
+  
+  /**
+   * Phase 2: Core Message Deconstruction
+   */
+  function deconstrucMessage(message) {
+    elements = {
+      core_promise: extractCorePromise(message),  // What does audience get?
+      proof_points: extractProofPoints(message),  // Why should they believe?
+      call_to_action: extractCTA(message),  // What's next?
+      emotional_trigger: identifyEmotionalTrigger(message),  // What feeling?
+      cultural_anchor: identifyCulturalAnchor(message)  // What Saudi value?
+    }
+    return elements
+  }
+  
+  /**
+   * Phase 3: Platform-Specific Adaptation
+   */
+  function adaptPerPlatform(messageElements, platformProfiles) {
+    strategies = PARALLEL_FOR each platform, profile in platformProfiles:
+      
+      SWITCH platform:
+        
+        CASE "instagram":
+          strategy = {
+            hook: createVisualHook(messageElements.core_promise),
+            format: "visual_first_carousel_or_reel",
+            caption: generateCaption(messageElements, 100_200_chars),
+            cta: "swipe_up_or_link",
+            tone: "aspirational_visual_forward",
+            dialect: {saudi: 0.7, msa: 0.3},
+            hashtag_count: 3_5,
+            emoji_usage: "low_selective"
+          }
+        
+        CASE "tiktok":
+          strategy = {
+            hook: "first_3_seconds_critical_visual_surprise",
+            format: "short_form_video_trendy",
+            caption: generateCaption(messageElements, 50_80_chars),
+            cta: "follow_for_more_or_duet_stitch",
+            tone: "trendy_playful_fast_paced",
+            dialect: {saudi: 0.8, slang: 0.1, msa: 0.1},
+            trend_integration: identifyRelevantTrends(),
+            music_recommendation: suggestMusicPairing(messageElements),
+            emoji_usage: "medium_playful"
+          }
+        
+        CASE "snapchat":
+          strategy = {
+            hook: "ephemeral_exclusive_feeling",
+            format: "story_behind_the_scenes",
+            caption: generateCaption(messageElements, 30_40_chars),
+            cta: "swipe_up_action_or_add_story",
+            tone: "intimate_direct_urgent",
+            dialect: {saudi: 0.75, casual: 0.15, msa: 0.1},
+            timing_urgency: "24_hour_disappear",
+            ar_lens_consideration: canUseARLens(messageElements),
+            emoji_usage: "medium_casual"
+          }
+        
+        CASE "linkedin":
+          strategy = {
+            hook: "thought_provoking_question_or_stat",
+            format: "article_or_carousel_professional",
+            caption: generateCaption(messageElements, 300_500_chars),
+            cta: "connection_request_or_website",
+            tone: "professional_industry_insider",
+            dialect: {saudi: 0.5, msa: 0.5, english: 0.0},
+            structure: "problem_solution_action",
+            engagement_prompt: generateDiscussionPrompt(messageElements),
+            emoji_usage: "none_professional"
+          }
+        
+        CASE "x":
+          strategy = {
+            hook: "provocative_statement_or_question",
+            format: "thread_or_single_tweet",
+            caption: generateCaption(messageElements, 280_chars),
+            cta: "retweet_invitation_or_link",
+            tone: "direct_opinionated_conversational",
+            dialect: {saudi: 0.6, msa: 0.4},
+            threading: IF_complex_msg THEN create_thread(),
+            quote_tweet_ability: make_quote_tweetable(),
+            emoji_usage: "low_contextual"
+          }
+      
+      RETURN strategy
+    
+    return strategies
+  }
+  
+  /**
+   * Phase 4: Visual Direction Mapping
+   */
+  function mapVisualDirection(strategies) {
+    briefs = []
+    
+    FOR each platform, strategy in strategies:
+      brief = {
+        platform: platform,
+        primary_visual: describeRequiredVisual(strategy, platform),
+        secondary_visual: (IF applicable) describeSecondaryVisual(strategy),
+        color_palette: recommendColors(strategy.tone, platform),
+        typography: {
+          font_family: recommendFont(platform),
+          sizing: recommendSizing(platform),
+          treatment: describeTreatment(strategy.tone)
+        },
+        text_overlay: describeTextOverlay(strategy),
+        animation_specification: (IF video) describeAnimation(strategy),
+        compliance_overlay: describeComplianceOverlay(platform)
+      }
+      briefs.push(brief)
+    
+    return briefs
+  }
+  
+  /**
+   * Phase 5: Performance Monitoring Setup
+   */
+  function setupMonitoring(strategies) {
+    kpis = []
+    
+    FOR each platform, strategy in strategies:
+      kpi_set = SWITCH platform:
+        CASE "instagram":
+          {
+            engagement_rate: "target_3.5%+",
+            saves: "target_0.5%+",
+            shares: "target_0.2%+",
+            profile_visits: "track",
+            swipe_up_rate: "track"
+          }
+        CASE "tiktok":
+          {
+            video_completion_rate: "target_65%+",
+            shares: "target_1%+",
+            follower_adds: "track",
+            duet_stitch_starts: "track",
+            comments: "target_2%+"
+          }
+        CASE "snapchat":
+          {
+            story_opens: "track",
+            screenshot_rate: "target_5%+",
+            link_clicks: "track",
+            reply_rate: "target_1%+"
+          }
+        CASE "linkedin":
+          {
+            engagement_rate: "target_2%+",
+            comment_quality: "qualitative_assessment",
+            connection_requests: "track",
+            article_reads: "track"
+          }
+        CASE "x":
+          {
+            retweets: "track",
+            quote_tweets: "track",
+            replies: "target_1%+",
+            impressions: "track",
+            engagement_rate: "target_2%+"
+          }
+      
+      kpis.push({platform: platform, kpi_set: kpi_set})
+    
+    return kpis
+  }
+  
+  // EXECUTE WORKFLOW
+  return {
+    platform_strategies: adaptPerPlatform(),
+    visual_briefs: mapVisualDirection(),
+    monitoring_setup: setupMonitoring()
+  }
+}
+
+
+// ============================================================================
+// WORKFLOW 3: INSTITUTIONAL COMMUNICATION SUITE
+// ============================================================================
+
+function createInstitutionalSuite(institutionalBrief) {
+  
+  /**
+   * Phase 1: Institutional Context Analysis
+   */
+  function analyzeContext(brief) {
+    analysis = {
+      institution_type: brief.institution,  // ministry, agency, public_enterprise
+      communication_objective: brief.objective,
+      stakeholder_map: brief.stakeholders,
+      risk_profile: assessRiskProfile(brief),
+      regulatory_requirements: gatherRegulatoryRequirements(brief.institution),
+      media_sensitivity: assessMediaSensitivity(brief.topic)
+    }
+    return analysis
+  }
+  
+  /**
+   * Phase 2: Messaging Architecture
+   */
+  function architectureMessaging(analysis) {
+    messaging = {
+      master_statement: generateMasterStatement(analysis),
+      background_narrative: generateBackgroundNarrative(analysis),
+      key_talking_points: generateTalkingPoints(analysis, 3_5),
+      stakeholder_narratives: PARALLEL_FOR stakeholder in analysis.stakeholder_map:
+        tailorNarrative(analysis, stakeholder),
+      qa_framework: generateQAFramework(analysis)
+    }
+    return messaging
+  }
+  
+  /**
+   * Phase 3: Multi-Format Content Development
+   */
+  function developContent(messaging, analysis) {
+    content = {
+      official_announcement: createAnnouncement(messaging, formal_msa),
+      social_media_suite: createSocialPosts(messaging, saudi_dialect),
+      faq_documentation: createFAQ(messaging),
+      media_talking_points: createMediaBrief(messaging),
+      visual_content_brief: createVisualBrief(analysis),
+      stakeholder_communications: createStakeholderMessages(messaging)
+    }
+    return content
+  }
+  
+  /**
+   * Phase 4: Compliance & Legal Review
+   */
+  function reviewCompliance(allContent) {
+    review = {
+      factual_accuracy: verifyFactualAccuracy(allContent),
+      regulatory_alignment: checkRegulatoryCompliance(allContent),
+      sensitivity_review: checkPoliticalReligiousSensitivity(allContent),
+      government_standards: checkGovernmentCommunicationStandards(allContent),
+      international_implications: assessInternationalImpact(allContent),
+      legal_sign_off: requireLegalApproval(allContent)
+    }
+    return review
+  }
+  
+  /**
+   * Phase 5: Crisis Contingency Planning
+   */
+  function planContingencies(content, analysis) {
+    contingencies = {
+      negative_scenarios: identifyPossibleNegativeReactions(),
+      alternative_messaging: generateAlternativeMessages(),
+      escalation_protocols: defineEscalationPaths(),
+      media_response_templates: createResponseTemplates(),
+      recovery_messaging: generateRecoveryMessages()
+    }
+    return contingencies
+  }
+  
+  return {
+    content_suite: developContent(),
+    compliance_status: reviewCompliance(),
+    contingency_plan: planContingencies()
+  }
+}
+
+
+// ============================================================================
+// WORKFLOW 5: CRISIS COMMUNICATION MANAGEMENT
+// ============================================================================
+
+function manageCrisis(crisisSignal) {
+  
+  /**
+   * Phase 1: Detection (Continuous Monitoring)
+   */
+  CONTINUOUS_MONITOR:
+    negativeSentimentSpike: detectSentiment(30% shift in 1 hour)
+    viralNegativePost: detectViral(">10K retweets, <2 hours")
+    regulatoryAlert: checkRegulatoryNews()
+    competitorAttack: trackMentions("competitor_brand_attack")
+    internalBreach: monitorInternalChannels()
+    influencerControversy: trackInfluencerNews()
+    systemOutage: checkPlatformStatus()
+  
+  IF crisis_triggered THEN
+    severity = classifySeverity(crisisSignal)
+  
+  /**
+   * Phase 2: Rapid Assessment
+   */
+  function assessCrisis(crisisSignal) {
+    assessment = {
+      root_cause: analyzeRootCause(crisisSignal),
+      affected_audiences: identifyAffectedGroups(crisisSignal),
+      misinformation_vs_fact: auditMisinfo(crisisSignal),
+      regulatory_implications: assessLegalRisk(crisisSignal),
+      competitive_context: checkCompetitorExploitation(crisisSignal),
+      internal_alignment_needs: identifyInternalCommunication()
+    }
+    return assessment
+  }
+  
+  /**
+   * Phase 3: Response Strategy (by severity)
+   */
+  function selectResponse(severity) {
+    SWITCH severity:
+      
+      CASE LEVEL_1_GREEN (< 100 mentions):
+        action = {
+          publish_timing: "24_hours",
+          channels: ["internal_log"],
+          response: "monitor_and_document"
+        }
+      
+      CASE LEVEL_2_YELLOW (100-1K mentions):
+        action = {
+          publish_timing: "4_hours",
+          channels: ["social_comments", "private_outreach"],
+          response: "acknowledge_and_engage"
+        }
+      
+      CASE LEVEL_3_ORANGE (1K-10K mentions):
+        action = {
+          publish_timing: "1_2_hours",
+          channels: ["public_statement", "all_platforms", "media"],
+          response: "executive_visibility"
+        }
+      
+      CASE LEVEL_4_RED (> 10K mentions, viral):
+        action = {
+          publish_timing: "< 30 minutes",
+          channels: ["full_crisis_protocol"],
+          response: "ceo_statement_press_release"
+        }
+    
+    return action
+  }
+  
+  /**
+   * Phase 4: Message Development
+   */
+  function developMessages(severity, assessment) {
+    messages = {
+      core_message: "What happened, what we're doing, desired outcome",
+      accountability: (IF_applicable) "We take responsibility",
+      action_commitment: "Concrete next steps",
+      sympathy: (IF_applicable) "We understand your concern",
+      recovery_timeline: "When will things improve"
+    }
+    
+    // Adapt language for cultural authenticity
+    messages = localizeForSaudiArabic(messages, severity)
+    
+    return messages
+  }
+  
+  /**
+   * Phase 5: Execution & Recovery
+   */
+  function executeResponse(messages, severity) {
+    
+    DURING_CRISIS (next 3-7 days):
+      EVERY 1_4_hours:
+        publishStatement(messages[severity])
+        respondToComments(authentic_saudi_arabic)
+        gatherStakeholderTestimonials()
+        trackSentimentEvolution()
+        detectCompetitorExploitation()
+        updateInformationAsAvailable()
+    
+    POST_CRISIS (1-2 weeks after):
+      issueComprehensiveStatement()
+      shareActionsTaken()
+      highlightCustomerTestimonials()
+      launchPositiveContentSeries()
+      documentLearnings()
+  }
+}
+
+
+// ============================================================================
+// QUALITY GATES (Orchestration)
+// ============================================================================
+
+function applyQualityGates(workflow, phase, content) {
+  
+  gates_configuration = {
+    authenticity: {
+      criteria: [
+        "language_natural_to_native",
+        "cultural_refs_appropriate",
+        "voice_consistent_with_brand",
+        "tone_matches_platform"
+      ]
+    },
+    compliance: {
+      criteria: [
+        "no_prohibited_claims",
+        "religious_refs_appropriate",
+        "no_misleading_info",
+        "regulatory_aligned",
+        "platform_policies_met"
+      ]
+    },
+    strategic: {
+      criteria: [
+        "supports_campaign_objective",
+        "brand_positioning_aligned",
+        "audience_expectations_met",
+        "drives_toward_kpis"
+      ]
+    },
+    platform_fit: {
+      criteria: [
+        "format_matches_best_practice",
+        "length_optimal_for_algorithm",
+        "visual_hierarchy_works",
+        "hashtags_appropriate",
+        "posting_time_optimized"
+      ]
+    }
+  }
+  
+  FOR each gate in gates_configuration:
+    result = evaluateGate(gate, content)
+    
+    IF result.pass == true THEN
+      continue_to_next_gate()
+    ELSE
+      escalate_to_owner(gate)
+      recommend_revisions(gate)
+}
+
+
+// ============================================================================
+// Attribution
+// ============================================================================
+/*
+  © OpenOps Studio
+  Saudi Accent Content Writer - Advanced Workflows
+  Created by Mamdouh Aboammar
+  
+  📧 Email: me@mamdouhaboammar.com
+  🔗 LinkedIn: https://www.linkedin.com/in/mamdouh-aboammar
+  💬 WhatsApp: https://wa.me/+201092677269
+  
+  Version: 2.0
+  Last Updated: January 13, 2026
+*/
