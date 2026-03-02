@@ -1,6 +1,6 @@
 # Saudi Accent Content Writer - Architecture Documentation
 
-**Version**: 2.0 - Technical Design  
+**Version**: 2.2 - Technical Design  
 **Status**: Production Ready  
 **Document Type**: System Architecture & Design Patterns
 
@@ -27,6 +27,14 @@ This document outlines the **technical and operational architecture** of the Sau
 │                 ORCHESTRATION LAYER                              │
 ├─────────────────────────────────────────────────────────────────┤
 │  Input Validation → Context Analysis → Processing Node Router   │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+                           ↓
+┌─────────────────────────────────────────────────────────────────┐
+│            AUGMENTATION MODULES (Optional)                       │
+├─────────────────────────────────────────────────────────────────┤
+│  Brief Synthesis → Trend/Competitor Radar → Voice Lint          │
+│  Claim Proofing → X Risk Monitor → SEO Snippet Builder           │
 └──────────────────────────┬──────────────────────────────────────┘
                            │
                            ↓
@@ -76,6 +84,16 @@ This document outlines the **technical and operational architecture** of the Sau
 ---
 
 ## 2. Processing Node Specification
+
+### Optional Augmentation Modules (Pre/Post Gates)
+
+These modules can run **before** the 13-node core or as **post-checks**:
+- **Brief Synthesis**: Normalize messy briefs into structured signals.
+- **Trend & Competitor Radar**: Extract market clusters and opportunity gaps.
+- **Voice Consistency Linter**: Enforce brand voice across dialects/platforms.
+- **Claim Proofing**: Flag risky claims + recommend evidence/disclaimers.
+- **X Risk Monitor**: Score sensitivity for high-stakes public statements.
+- **Arabic SEO Snippet Builder**: Generate title/meta/FAQ with Saudi tone.
 
 ### Node 1: Dialect Selection Engine
 
@@ -1090,5 +1108,5 @@ This architecture document is part of the OpenOps Strategic Framework and repres
 ---
 
 *Document Version: 2.0*  
-*Last Updated: January 2026*  
+*Last Updated: February 2026*  
 *Status: Technical Specification - Production Ready*

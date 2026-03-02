@@ -1,0 +1,25 @@
+{
+  "tool_id": "seo-snippet-builder-ar",
+  "name": "Arabic SEO Snippet Builder",
+  "version": "0.1.0",
+  "status": "spec",
+  "description": "Generate Arabic SEO snippets (title, meta description, H1, FAQ) with Saudi tone.",
+  "inputs": {
+    "topic": "string",
+    "audience": "string",
+    "keywords": "array<string>",
+    "tone": "optional<string>"
+  },
+  "outputs": {
+    "title": "string",
+    "meta_description": "string",
+    "h1": "string",
+    "faq": "array<object>"
+  },
+  "references": ["../platform-copy-techniques.md"],
+  "attribution": {
+    "copyright": "© OpenOps Studio",
+    "created_by": "Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
+  }
+}

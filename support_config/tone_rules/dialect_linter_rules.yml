@@ -1,0 +1,21 @@
+version: "1.0"
+last_updated: "2026-02-22"
+
+hard_fail:
+  - "Non-Saudi dialect lexemes detected"
+  - "Absolute claims without evidence"
+  - "Political/sectarian/tribal provocation"
+
+soft_fail:
+  - "Overuse of slang in professional platform"
+  - "Platform tone mismatch"
+  - "Repeating slang words more than twice in 3 lines"
+
+thresholds:
+  linkedin_min_score: 0.92
+  instagram_min_score: 0.90
+  x_min_score: 0.91
+
+actions:
+  hard_fail: "reject_output"
+  soft_fail: "regenerate"

@@ -1,15 +1,47 @@
 {
   "tool_registry": {
     "version": "1.0.0",
-    "last_updated": "2026-01-13",
-    "total_tools": 5
+    "last_updated": "2026-02-22",
+    "total_tools": 13
   },
   "tools_by_category": {
+    "knowledge_retrieval": [
+      {
+        "tool_id": "dialect-internal-search",
+        "name": "Dialect Internal Search (Saudi)",
+        "file_path": "tools/dialect-internal-search.tool.json",
+        "status": "spec",
+        "language": "typescript"
+      }
+    ],
+    "strategy_intel": [
+      {
+        "tool_id": "brief-synthesizer",
+        "name": "Brief Synthesizer (Smart Intake → Signals)",
+        "file_path": "tools/brief-synthesizer.tool.json",
+        "status": "spec",
+        "language": "typescript"
+      },
+      {
+        "tool_id": "trend-radar",
+        "name": "Trend & Competitor Radar (KSA)",
+        "file_path": "tools/trend-radar.tool.json",
+        "status": "spec",
+        "language": "python"
+      }
+    ],
     "language_and_tone": [
       {
         "tool_id": "dialect-normalizer",
         "name": "Saudi Dialect Normalizer",
         "file_path": "tools/dialect-normalizer.tool.json",
+        "status": "spec",
+        "language": "typescript"
+      },
+      {
+        "tool_id": "voice-consistency-linter",
+        "name": "Voice Consistency Linter (Brand × Platform)",
+        "file_path": "tools/voice-consistency-linter.tool.json",
         "status": "spec",
         "language": "typescript"
       }
@@ -37,6 +69,13 @@
         "file_path": "tools/compliance-evaluator.tool.json",
         "status": "spec",
         "language": "typescript"
+      },
+      {
+        "tool_id": "claim-proofing",
+        "name": "Claim Proofing (Evidence/Disclaimer)",
+        "file_path": "tools/claim-proofing.tool.json",
+        "status": "spec",
+        "language": "python"
       }
     ],
     "calendar": [
@@ -44,6 +83,24 @@
         "tool_id": "calendar-generator",
         "name": "Social Calendar Generator",
         "file_path": "tools/calendar-generator.tool.json",
+        "status": "spec",
+        "language": "typescript"
+      }
+    ],
+    "risk_monitoring": [
+      {
+        "tool_id": "x-risk-monitor",
+        "name": "X/Twitter Risk Monitor (KSA)",
+        "file_path": "tools/x-risk-monitor.tool.json",
+        "status": "spec",
+        "language": "python"
+      }
+    ],
+    "seo": [
+      {
+        "tool_id": "seo-snippet-builder-ar",
+        "name": "Arabic SEO Snippet Builder",
+        "file_path": "tools/seo-snippet-builder-ar.tool.json",
         "status": "spec",
         "language": "typescript"
       }

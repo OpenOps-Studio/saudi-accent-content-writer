@@ -1,0 +1,9 @@
+version: "1.0"
+last_updated: "2026-02-22"
+
+methodology:
+  rule: "No numeric benchmarks without sources"
+  rationale: "Avoid unverifiable claims; rely on evidence or label as hypothesis"
+  usage:
+    - "Use relative benchmarks only (higher/lower)"
+    - "Require citations for numeric metrics"

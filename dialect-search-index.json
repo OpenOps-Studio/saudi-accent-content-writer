@@ -1,0 +1,66 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-02-22",
+  "sources": [
+    {
+      "id": "how_to_write_saudi",
+      "path": "how-to-write-saudi.md",
+      "tags": ["dialect", "tone", "cringe", "examples", "platform"],
+      "priority": 1
+    },
+    {
+      "id": "platform_copy_techniques",
+      "path": "platform-copy-techniques.md",
+      "tags": ["hook", "value", "cta", "platform", "linkedin"],
+      "priority": 2
+    },
+    {
+      "id": "examples",
+      "path": "examples.md",
+      "tags": ["instagram", "linkedin", "x", "tiktok", "crisis"],
+      "priority": 3
+    },
+    {
+      "id": "creative_refs",
+      "path": "creative.md",
+      "tags": ["tone", "style", "reference"],
+      "priority": 4
+    },
+    {
+      "id": "dialect_engine",
+      "path": "dialect-engine.md",
+      "tags": ["patterns", "scoring", "guardrails"],
+      "priority": 1
+    },
+    {
+      "id": "sector_lexicon",
+      "path": "saudi-lexicon-by-sector.md",
+      "tags": ["sector", "government", "health", "finance", "education"],
+      "priority": 2
+    },
+    {
+      "id": "city_rules",
+      "path": "support_config/tone_rules/city_dialect_rules.yml",
+      "tags": ["riyadh", "jeddah", "eastern", "city"],
+      "priority": 2
+    },
+    {
+      "id": "sector_city_lexicon",
+      "path": "saudi-lexicon-sector-city.md",
+      "tags": ["sector", "city", "riyadh", "jeddah", "eastern", "government", "finance", "health", "education"],
+      "priority": 1
+    },
+    {
+      "id": "seasonal_exceptions",
+      "path": "support_config/tone_rules/seasonal_city_exceptions.yml",
+      "tags": ["ramadan", "eid", "national_day", "seasonal", "city"],
+      "priority": 1
+    }
+  ],
+  "query_templates": [
+    "{platform} + لهجة سعودية + hook",
+    "{intent} + CTA سعودي احترافي",
+    "{platform} + أمثلة كابشن",
+    "linkedin + نبرة سعودية مهنية"
+  ]
+}

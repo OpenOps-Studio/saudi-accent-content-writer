@@ -1,6 +1,6 @@
 # Saudi Accent Content Writer - Core Capabilities Matrix
 
-**Version**: 2.0 - Comprehensive Feature Set  
+**Version**: 2.2 - Comprehensive Feature Set  
 **Status**: Production Ready  
 **Document Type**: Capabilities & Feature Specification
 
@@ -14,6 +14,7 @@
 - [4. Institutional Navigation](#4-institutional-navigation)
 - [5. Platform Optimization Capabilities](#5-platform-optimization-capabilities)
 - [6. Measurement & Analytics Capabilities](#6-measurement--analytics-capabilities)
+- [7. Strategic Intelligence & SEO](#7-strategic-intelligence--seo)
 
 ---
 
@@ -385,6 +386,36 @@
 
 ---
 
+## 7. Strategic Intelligence & SEO
+
+### 7.1 Brief Intelligence & Signal Extraction
+- Normalize messy briefs into structured inputs
+- Identify priority objectives + red flags
+- Generate platform signals and audience intent
+
+### 7.2 Trend & Competitor Radar
+- Trend cluster extraction (KSA market)
+- Competitor theme mapping
+- Opportunity gap detection
+- Risk-topic alerts for sensitive narratives
+
+### 7.3 Voice Consistency Linter
+- Brand voice drift detection per platform
+- Dialect alignment checks (Saudi/Gulf/MSA)
+- Suggestions to repair tone and lexicon
+
+### 7.4 Claim Proofing & Evidence Checks
+- Flag medical/price/comparative claims
+- Recommend evidence or safe disclaimers
+- Reduce compliance escalation cycles
+
+### 7.5 Arabic SEO Snippet Builder
+- Title + meta description generation
+- H1 + FAQ snippets in Saudi tone
+- Readability and compliance checks
+
+---
+
 ## 7. Operational Capabilities
 
 ### 7.1 Project Workflow
@@ -483,5 +514,5 @@ LinkedIn: https://www.linkedin.com/in/mamdouh-aboammar
 ---
 
 *Document Version: 2.0*  
-*Last Updated: January 2026*  
+*Last Updated: February 2026*  
 *Status: Capabilities Matrix - Production Ready*

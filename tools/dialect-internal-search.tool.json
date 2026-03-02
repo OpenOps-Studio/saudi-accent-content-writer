@@ -1,0 +1,24 @@
+{
+  "tool_id": "dialect-internal-search",
+  "name": "Dialect Internal Search (Saudi)",
+  "version": "0.1.0",
+  "status": "spec",
+  "description": "Search internal knowledge for Saudi dialect patterns and examples to enforce professional Saudi tone.",
+  "inputs": {
+    "query": "string",
+    "platform": "optional<string>",
+    "intent": "optional<string>",
+    "max_results": "optional<number>"
+  },
+  "outputs": {
+    "snippets": "array<object>",
+    "sources_used": "array<string>",
+    "guidance": "array<string>"
+  },
+  "references": ["../dialect-search-index.json", "../dialect-engine.md"],
+  "attribution": {
+    "copyright": "© OpenOps Studio",
+    "created_by": "Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
+  }
+}

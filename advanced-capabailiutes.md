@@ -1,6 +1,6 @@
 # Advanced Capabilities — Saudi Accent Content Writer
 
-Version: 2.1
+Version: 2.2
 Status: Production-Grade Spec
 
 ---
@@ -37,6 +37,26 @@ Status: Production-Grade Spec
 - متوافق مع `processing-logic.yml` و`workflows.json`.
 - نقاط إدراج Quality Gates (Dialect/Compliance/PlatformFit).
 
+## 9) Brief Synthesizer
+- يحوّل brief غير مرتب إلى مدخلات منظمة.
+- يطلع أهداف أولوية + إشارات منصة + مخاطر مبكرة.
+
+## 10) Trend & Competitor Radar
+- تجميع ترندات السوق السعودي.
+- استخراج ثيمات المنافسين والفجوات.
+
+## 11) Voice Consistency Linter
+- يفحص اتساق صوت العلامة عبر المنصات.
+- يقترح تعديلات دقيقة للهجة والنبرة.
+
+## 12) Claim Proofing
+- يكتشف ادّعاءات حساسة (سعر/صحة/مقارنة).
+- يقترح Evidence أو Disclaimer آمن.
+
+## 13) Arabic SEO Snippet Builder
+- Title/Meta/H1/FAQ بنبرة سعودية.
+- جاهز لصفحات الهبوط والمدونات.
+
 ---
 
 ## Usage Hints
@@ -53,4 +73,4 @@ Created by Mamdouh Aboammar
 LinkedIn: https://www.linkedin.com/in/mamdouh-aboammar
 
 ---
-Document: Advanced Capabilities v2.1 — Jan 2026
+Document: Advanced Capabilities v2.2 — Feb 2026

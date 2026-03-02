@@ -80,7 +80,7 @@
 ---
 
 ## Attribution
-© OpenOps Studio  
+© OpenOps Studio — All rights reserved  
 Strategic and Execution Framework  
 Created by Mamdouh Aboammar  
 LinkedIn: https://www.linkedin.com/in/mamdouh-aboammar

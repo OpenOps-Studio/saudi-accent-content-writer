@@ -6,10 +6,16 @@
       "name": "Generate Multi-Platform Captions (Saudi)",
       "inputs": ["brand_tone", "offer", "audience", "platforms[]"],
       "steps": [
+        "BriefSynthesis",
         "NormalizeBrief",
+        "DialectSearch",
         "DialectGuard",
+        "TrendRadar",
         "CaptionSynthesis",
+        "DialectEnforcer",
         "PlatformFit",
+        "VoiceConsistencyLint",
+        "ClaimProofing",
         "ComplianceCheck",
         "CTAInsertion",
         "FinalizePackage"
@@ -22,9 +28,14 @@
       "name": "Write LinkedIn Post/Article (Saudi Pro Tone)",
       "inputs": ["topic", "insights", "evidence", "cta"],
       "steps": [
+        "BriefSynthesis",
+        "DialectSearch",
         "OutlineBuild",
         "SaudiProToneAdjust",
+        "DialectEnforcer",
         "EvidenceAttach",
+        "VoiceConsistencyLint",
+        "ClaimProofing",
         "ComplianceCheck",
         "FormatForLinkedIn"
       ],
@@ -36,16 +47,54 @@
       "name": "Build Social Media Calendar",
       "inputs": ["brand", "month", "strategic_themes[]", "priority_platforms[]"],
       "steps": [
+        "BriefSynthesis",
+        "DialectSearch",
+        "TrendRadar",
         "ThemeSpread",
         "IdeaGenerator",
         "CaptionSynthesis",
+        "DialectEnforcer",
         "DesignIdeaMap",
         "KPIAssign",
+        "VoiceConsistencyLint",
         "CalendarAssemble",
         "ReviewAndGate"
       ],
       "outputs": ["yaml_calendar", "csv_headers", "weekly_breakdown"],
       "quality_gates": ["Coverage", "Dialect", "Compliance", "PlatformFit"]
+    },
+    {
+      "id": "x_sensitive_statement",
+      "name": "X/Twitter Sensitive Statement (KSA)",
+      "inputs": ["topic", "position", "stakeholders", "risk_level"],
+      "steps": [
+        "BriefSynthesis",
+        "DialectSearch",
+        "DialectGuard",
+        "RiskScreen",
+        "XRiskMonitor",
+        "DialectEnforcer",
+        "ClaimProofing",
+        "ComplianceCheck",
+        "FinalizePackage"
+      ],
+      "outputs": ["statement", "safer_alternatives", "escalation_needed"],
+      "quality_gates": ["Risk", "Compliance", "Dialect"]
+    },
+    {
+      "id": "seo_snippet_pack",
+      "name": "Arabic SEO Snippet Pack (Saudi Tone)",
+      "inputs": ["topic", "keywords[]", "audience", "tone"],
+      "steps": [
+        "BriefSynthesis",
+        "DialectSearch",
+        "SEOSnippetBuild",
+        "DialectEnforcer",
+        "VoiceConsistencyLint",
+        "ComplianceCheck"
+      ],
+      "outputs": ["title", "meta_description", "h1", "faq"],
+      "quality_gates": ["Compliance", "Readability"]
     }
   ],
   "attribution": {
@@ -54,5 +103,5 @@
     "created_by": "Mamdouh Aboammar",
     "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
   },
-  "last_updated": "2026-01-13"
+  "last_updated": "2026-02-22"
 }

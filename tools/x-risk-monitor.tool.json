@@ -1,0 +1,25 @@
+{
+  "tool_id": "x-risk-monitor",
+  "name": "X/Twitter Risk Monitor (KSA)",
+  "version": "0.1.0",
+  "status": "spec",
+  "description": "Scores sensitive topics for X/Twitter and suggests safer phrasings and escalation rules.",
+  "inputs": {
+    "draft": "string",
+    "audience": "optional<string>",
+    "topic": "optional<string>"
+  },
+  "outputs": {
+    "risk_score": "number",
+    "risk_level": "string",
+    "hot_topics": "array<string>",
+    "safer_alternatives": "array<string>",
+    "escalation_required": "boolean"
+  },
+  "references": ["../core-capabilities.md"],
+  "attribution": {
+    "copyright": "© OpenOps Studio",
+    "created_by": "Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
+  }
+}

@@ -1,0 +1,41 @@
+version: "1.0"
+region: "KSA"
+last_updated: "2026-02-22"
+
+language_policy:
+  primary: "ar-SA"
+  secondary: "en"
+  dialect_preference: "saudi"
+
+platform_preferences:
+  top_priority:
+    - "snapchat"
+    - "instagram"
+    - "x"
+    - "linkedin"
+  notes:
+    - "Snapchat قوي للشباب ونمط الحياة"
+    - "LinkedIn مهم للمؤسسي وB2B"
+
+seasonality:
+  high_impact:
+    - "Ramadan"
+    - "Eid al-Fitr"
+    - "Eid al-Adha"
+    - "Saudi National Day"
+  guidance:
+    - "رفع الحساسية اللغوية في رمضان والأعياد"
+
+compliance:
+  required_checks:
+    - "citc"
+    - "media_ministry"
+    - "pdpa"
+
+values:
+  core:
+    - "الأسرة"
+    - "الاحترام"
+    - "الثقة"
+    - "الابتكار"
+    - "الاعتزاز الوطني"

@@ -2,7 +2,7 @@
   "agent_config": {
     "id": "agent_saudi_accent_writer_v2",
     "name": "Saudi Accent Content Writer",
-    "version": "2.0",
+    "version": "2.2",
     "status": "production",
     "description": "Enterprise-grade Saudi dialect content generation with institutional compliance",
     "framework": "OpenOps Studio",
@@ -312,8 +312,73 @@
       "analytics_platforms",
       "legal_review_system",
       "crm_systems",
-      "marketing_automation_tools"
+      "marketing_automation_tools",
+      "ga4",
+      "meta_marketing_api",
+      "x_api",
+      "linkedin_marketing"
     ]
+  },
+
+  "augmentation_modules": {
+    "dialect_internal_search": {
+      "enabled": true,
+      "purpose": "Retrieve Saudi dialect patterns/examples from internal knowledge"
+    },
+    "dialect_enforcer": {
+      "enabled": true,
+      "threshold": 0.92,
+      "purpose": "Force professional Saudi dialect before final output"
+    },
+    "lexicon_loader": {
+      "enabled": true,
+      "purpose": "Load platform lexicon and enforce allowed/forbidden terms"
+    },
+    "dialect_linter_strict": {
+      "enabled": true,
+      "purpose": "Hard-fail on non-Saudi dialect or prohibited claims"
+    },
+    "sector_lexicon_loader": {
+      "enabled": true,
+      "purpose": "Load sector lexicon and enforce sector-appropriate terms"
+    },
+    "city_dialect_rules": {
+      "enabled": true,
+      "purpose": "Apply city-specific tone constraints"
+    },
+    "sector_city_lexicon": {
+      "enabled": true,
+      "purpose": "Load sector × city lexicon for maximum precision"
+    },
+    "seasonal_city_exceptions": {
+      "enabled": true,
+      "purpose": "Apply seasonal tone shifts per city"
+    },
+    "brief_synthesis": {
+      "enabled": true,
+      "purpose": "Normalize brief inputs and extract objectives/risk flags"
+    },
+    "trend_radar": {
+      "enabled": true,
+      "purpose": "Surface KSA market trends and competitor themes"
+    },
+    "voice_consistency_lint": {
+      "enabled": true,
+      "threshold": 0.88,
+      "purpose": "Enforce brand voice consistency across platforms"
+    },
+    "claim_proofing": {
+      "enabled": true,
+      "purpose": "Detect sensitive claims and require evidence/disclaimers"
+    },
+    "x_risk_monitor": {
+      "enabled": true,
+      "purpose": "Score sensitivity for X/Twitter public statements"
+    },
+    "seo_snippet_builder": {
+      "enabled": true,
+      "purpose": "Generate Arabic SEO snippets aligned with Saudi tone"
+    }
   },
   
   "attribution_requirements": {

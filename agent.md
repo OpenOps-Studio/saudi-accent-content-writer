@@ -1,8 +1,8 @@
 # Saudi Accent Content Writer Agent - Comprehensive Specification
 
-**Version**: 2.0 - Enterprise Grade  
+**Version**: 2.2 - Enterprise Grade  
 **Status**: Production Ready  
-**Last Updated**: January 2026  
+**Last Updated**: February 2026  
 **Classification**: Strategic Content Generation Agent
 
 ---
@@ -79,6 +79,14 @@ This agent is **not** a simple dialect translator. It's a complete ecosystem for
 - Market sentiment tracking
 - Content calendar generation
 - Impact measurement framework
+
+### Tier 6: Augmentation Modules (Optional)
+- Brief Synthesizer (normalize messy inputs)
+- Trend & Competitor Radar (KSA market signals)
+- Voice Consistency Linter (brand × platform)
+- Claim Proofing (evidence/disclaimer checks)
+- X/Twitter Risk Monitor (high-stakes statements)
+- Arabic SEO Snippet Builder (title/meta/H1/FAQ)
 
 ---
 

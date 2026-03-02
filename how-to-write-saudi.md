@@ -580,6 +580,8 @@ Before publishing any Saudi content:
 - [ ] Is it compliant with CITC and Media Ministry standards?
 - [ ] Does it advance the business objective?
 
+> **Dialect Engine v3**: راجع `dialect-engine.md` لتطبيق Pattern Library وDialect Enforcer قبل الإخراج النهائي.
+
 ---
 
 ## Attribution & Credits

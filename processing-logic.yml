@@ -1,9 +1,9 @@
 ## Processing Logic Specification
-## Version: 2.0
+## Version: 2.2
 ## Status: Production Ready
 
 name: SaudiAccentContentWriter_ProcessingLogic
-version: 2.0
+version: 2.2
 
 # Attribution
 metadata:
@@ -13,6 +13,22 @@ metadata:
 
 # Processing Phases
 phases:
+  phase_0_intake:
+    name: Optional Intake & Signals (Augmentation)
+    duration: "5 minutes"
+    nodes:
+      - node_0_brief_synthesis
+      - node_0_trend_radar
+      - node_0_dialect_internal_search
+    parallelization: full_parallel
+    dependencies: none
+    outputs:
+      - normalized_brief
+      - priority_objectives
+      - market_signal_clusters
+      - risk_topic_alerts
+      - dialect_snippets
+
   phase_1_analysis:
     name: Parallel Analysis Nodes
     duration: "10 minutes"
@@ -87,6 +103,75 @@ phases:
 
 # Node Specifications
 nodes:
+  node_0_brief_synthesis:
+    name: Brief Synthesis (Optional)
+    input_requirements:
+      - raw_brief: string
+      - platforms: array
+      - goals: array
+    processing_logic:
+      - normalize_brief
+      - extract_priorities
+      - flag_risks
+      - emit_platform_signals
+    output_format:
+      type: BriefSynthesis
+      fields:
+        - normalized_brief: object
+        - priority_objectives: array
+        - risk_flags: array
+        - platform_signals: object
+
+  node_0_trend_radar:
+    name: Trend & Competitor Radar (Optional)
+    input_requirements:
+      - industry: string
+      - audience_segments: array
+      - platforms: array
+    processing_logic:
+      - detect_trend_clusters
+      - extract_competitor_themes
+      - identify_opportunity_gaps
+      - flag_risk_topics
+    output_format:
+      type: TrendRadar
+      fields:
+        - trend_clusters: array
+        - competitor_themes: array
+        - opportunity_gaps: array
+        - risk_topics: array
+
+  node_0_dialect_internal_search:
+    name: Dialect Internal Search (Optional)
+    input_requirements:
+      - query: string
+      - platform: string
+      - intent: string
+    processing_logic:
+      - search_internal_knowledge
+      - return_top_snippets
+      - generate_usage_guidance
+    output_format:
+      type: DialectSearchResult
+      fields:
+        - snippets: array
+        - sources_used: array
+        - guidance: array
+
+  node_0_lexicon_loader:
+    name: Lexicon Loader (Platform-specific)
+    input_requirements:
+      - platform: string
+    processing_logic:
+      - load_lexicon_from_file
+      - map_allowed_forbidden_terms
+    output_format:
+      type: LexiconProfile
+      fields:
+        - allowed_terms: array
+        - soft_allowed_terms: array
+        - forbidden_terms: array
+
   node_1:
     name: Dialect Selection
     input_requirements:
@@ -375,6 +460,22 @@ nodes:
 
 # Quality Gates Configuration
 quality_gates:
+  gate_0a:
+    name: dialect_linter_strict
+    input: content_variants
+    process: run_dialect_linter_rules
+    threshold: 1.0
+    metric: pass_fail
+    failure_action: reject_output
+
+  gate_0:
+    name: dialect_enforcer
+    input: content_variants
+    process: calculate_dialect_enforcement_score
+    threshold: 0.92
+    metric: enforcement_score
+    failure_action: regenerate
+
   gate_1:
     name: authenticity_verification
     input: content_variants
@@ -417,6 +518,16 @@ quality_gates:
 
 # Error Handling
 error_handling:
+  dialect_linter_reject:
+    trigger: dialect_linter_pass == false
+    action: reject_output
+    retry_limit: 0
+    escalation: notify_content_lead
+  dialect_enforcer_failure:
+    trigger: enforcement_score < 0.92
+    action: regenerate_content
+    retry_limit: 3
+    escalation: notify_content_lead
   authenticity_gate_failure:
     trigger: authenticity_score < 0.90
     action: regenerate_content
@@ -441,7 +552,71 @@ error_handling:
     timeline_sla: immediate
     escalation: notify_ceo
 
+# Optional Augmentation Modules
+augmentation_modules:
+  dialect_internal_search:
+    purpose: Retrieve Saudi dialect patterns and examples from internal knowledge
+    applies_to: [all_content_generation]
+    threshold: "n/a"
+
+  lexicon_loader:
+    purpose: Load platform lexicon and enforce allowed/forbidden terms
+    applies_to: [all_content_generation]
+    threshold: "n/a"
+
+  sector_lexicon_loader:
+    purpose: Load sector lexicon and enforce sector-appropriate terms
+    applies_to: [all_content_generation]
+    threshold: "n/a"
+
+  city_dialect_rules:
+    purpose: Apply city-specific tone constraints (Riyadh/Jeddah/Eastern)
+    applies_to: [all_content_generation]
+    threshold: "n/a"
+
+  sector_city_lexicon:
+    purpose: Load sector × city lexicon for maximum precision
+    applies_to: [all_content_generation]
+    threshold: "n/a"
+
+  seasonal_city_exceptions:
+    purpose: Apply seasonal tone shifts per city (Ramadan/Eid/National Day)
+    applies_to: [all_content_generation]
+    threshold: "n/a"
+
+  dialect_linter_strict:
+    purpose: Hard-fail on non-Saudi dialect or prohibited claims
+    applies_to: [captions, linkedin, x_statements, seo_snippets]
+    threshold: "pass/fail"
+    failure_action: reject_output
+
+  dialect_enforcer:
+    purpose: Force professional Saudi dialect with strict scoring
+    applies_to: [captions, linkedin, x_statements, seo_snippets]
+    threshold: 0.92
+    failure_action: regenerate
+  voice_consistency_lint:
+    purpose: Verify brand voice consistency across dialects and platforms
+    applies_to: [caption_variants, linkedin_posts, seo_snippets]
+    threshold: 0.88
+    failure_action: revise_tone_and_lexicon
+
+  claim_proofing:
+    purpose: Detect risky claims and require evidence/disclaimers
+    applies_to: [pricing, medical, comparative]
+    failure_action: add_disclaimer_or_remove_claim
+
+  x_risk_monitor:
+    purpose: Score sensitivity for X/Twitter public statements
+    applies_to: [x_statements, threads]
+    failure_action: require_escalation_review
+
+  seo_snippet_builder:
+    purpose: Generate Arabic SEO snippets aligned with Saudi tone
+    applies_to: [blogs, landing_pages]
+    failure_action: revise_readability_and_compliance
+
 ---
-document_version: "2.0"
-last_updated: "2026-01-13"
+document_version: "2.2"
+last_updated: "2026-02-22"
 status: "production_ready"

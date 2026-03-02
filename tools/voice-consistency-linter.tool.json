@@ -1,0 +1,23 @@
+{
+  "tool_id": "voice-consistency-linter",
+  "name": "Voice Consistency Linter (Brand × Platform)",
+  "version": "0.1.0",
+  "status": "spec",
+  "description": "Checks Saudi tone, brand voice alignment, and platform fit. Flags drift and suggests fixes.",
+  "inputs": {
+    "brand_voice": "object",
+    "platform": "string",
+    "content": "string"
+  },
+  "outputs": {
+    "consistency_score": "number",
+    "violations": "array<string>",
+    "suggested_fixes": "array<string>"
+  },
+  "references": ["../core-capabilities.md", "../creative.md"],
+  "attribution": {
+    "copyright": "© OpenOps Studio",
+    "created_by": "Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
+  }
+}

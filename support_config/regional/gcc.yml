@@ -1,0 +1,33 @@
+version: "1.0"
+region: "GCC"
+last_updated: "2026-02-22"
+
+language_policy:
+  primary: "ar"
+  secondary: "en"
+  dialect_preference: "gulf"
+
+platform_preferences:
+  top_priority:
+    - "instagram"
+    - "snapchat"
+    - "tiktok"
+    - "linkedin"
+
+seasonality:
+  high_impact:
+    - "Ramadan"
+    - "Eid"
+    - "National Days"
+
+compliance:
+  required_checks:
+    - "citc_or_local_equivalent"
+    - "media_ministry"
+
+values:
+  core:
+    - "الثقة"
+    - "الاحتراف"
+    - "السمعة"
+    - "القيمة مقابل السعر"

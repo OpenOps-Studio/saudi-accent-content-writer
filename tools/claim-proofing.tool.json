@@ -1,0 +1,24 @@
+{
+  "tool_id": "claim-proofing",
+  "name": "Claim Proofing (Evidence/Disclaimer)",
+  "version": "0.1.0",
+  "status": "spec",
+  "description": "Detects risky claims (medical/price/comparison) and recommends evidence or safe disclaimers.",
+  "inputs": {
+    "content": "string",
+    "claim_context": "optional<object>",
+    "risk_level": "optional<string>"
+  },
+  "outputs": {
+    "flagged_claims": "array<string>",
+    "evidence_requirements": "array<string>",
+    "safe_disclaimers": "array<string>",
+    "pass": "boolean"
+  },
+  "references": ["../instructions.md"],
+  "attribution": {
+    "copyright": "© OpenOps Studio",
+    "created_by": "Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
+  }
+}

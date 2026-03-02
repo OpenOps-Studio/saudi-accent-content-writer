@@ -1,8 +1,12 @@
 {
-  "version": "2.1",
+  "version": "2.2",
   "style_guides": [
     { "title": "Saudi Dialect How-To", "path": "how-to-write-saudi.md" },
-    { "title": "Platform Copy Techniques", "path": "platform-copy-techniques.md" }
+    { "title": "Platform Copy Techniques", "path": "platform-copy-techniques.md" },
+    { "title": "Dialect Engine v3", "path": "dialect-engine.md" },
+    { "title": "Saudi Lexicon by Platform", "path": "saudi-lexicon-by-platform.md" },
+    { "title": "Saudi Lexicon by Sector", "path": "saudi-lexicon-by-sector.md" },
+    { "title": "Saudi Lexicon — Sector × City", "path": "saudi-lexicon-sector-city.md" }
   ],
   "templates": [
     { "title": "Social Media Calendar", "path": "social-media-calendar.md" }
@@ -28,11 +32,22 @@
   "helpers": [
     { "title": "Calendar Helper Script", "path": "calendar-from-brief.mjs" }
   ],
+  "support_config": [
+    { "title": "Regional — KSA", "path": "support_config/regional/ksa.yml" },
+    { "title": "Regional — GCC", "path": "support_config/regional/gcc.yml" },
+    { "title": "Industry — SaaS", "path": "support_config/industry_specific/saas.yml" },
+    { "title": "Industry — Commerce", "path": "support_config/industry_specific/commerce.yml" },
+    { "title": "Industry — Services", "path": "support_config/industry_specific/services.yml" },
+    { "title": "Benchmarks — Methodology", "path": "support_config/benchmarks/methodology.yml" },
+    { "title": "Tone Rules — Dialect Linter", "path": "support_config/tone_rules/dialect_linter_rules.yml" },
+    { "title": "Tone Rules — City Dialect", "path": "support_config/tone_rules/city_dialect_rules.yml" },
+    { "title": "Tone Rules — Seasonal City Exceptions", "path": "support_config/tone_rules/seasonal_city_exceptions.yml" }
+  ],
   "attribution": {
     "copyright": "© OpenOps Studio",
     "framework": "Strategic and Execution Framework",
     "created_by": "Mamdouh Aboammar",
     "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
   },
-  "last_updated": "2026-01-13"
+  "last_updated": "2026-02-22"
 }

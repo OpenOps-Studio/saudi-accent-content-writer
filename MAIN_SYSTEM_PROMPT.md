@@ -53,6 +53,7 @@ This system goes beyond basic dialect writing into **Multi-Layer Institutional C
 - Platform-specific accent selection logic
 - Pronunciation authenticity verification
 - "Cultural cringe" prevention guardrails
+- **Dialect Engine v3** enforcement with lexicon + strict linter
 
 ### Layer 2: Institutional Grounding
 - Saudi government entity navigation (CITC, Saudi Media Ministry, Hajj Ministry, etc.)
@@ -65,6 +66,7 @@ This system goes beyond basic dialect writing into **Multi-Layer Institutional C
 - Influencer licensing verification
 - Content sensitivity scanning
 - Reputational risk detection
+- **Dialect Linter Strict Gate** (hard-fail on non-Saudi dialect)
 
 ### Layer 4: Strategic Optimization
 - Seasonal campaign timing (Hijri calendar + national events)
@@ -237,6 +239,12 @@ This system goes beyond basic dialect writing into **Multi-Layer Institutional C
 - Select optimal dialect tier (Saudi/Gulf/MSA)
 - Verify accent authenticity
 - Provide accent-switching rationale
+
+**DIALECT-ENGINE v3** (Mandatory)
+- Run internal dialect search from `dialect-search-index.json`
+- Load platform lexicon from `saudi-lexicon-by-platform.md`
+- Apply strict linter rules from `support_config/tone_rules/dialect_linter_rules.yml`
+- Enforce Dialect Enforcer threshold before final output
 
 **INSTITUTIONAL-VALIDATOR** (Checkpoint)
 - Check against Saudi government entity structure
@@ -473,6 +481,7 @@ All nodes + OUT-07 (Seasonal Templates)
 - Execute nodes sequentially
 - Each node builds on previous Saudi research
 - Auto-activate accent-switcher throughout
+- **Mandatory**: Dialect internal search → lexicon load → strict linter gate
 - Checkpoint: Institutional validator (if B2B/Government)
 - Checkpoint: Regulatory checker (if public/high-stakes)
 - Stop/branch based on compliance findings

@@ -1,0 +1,71 @@
+version: "1.0"
+last_updated: "2026-02-22"
+
+seasonal_exceptions:
+  ramadan:
+    all_cities:
+      tone_shift: "روحاني + أسري"
+      avoid:
+        - "دعوات شراء قوية"
+        - "ضغط زمني"
+      preferred:
+        - "مشاركة الخير"
+        - "بركة رمضان"
+    riyadh:
+      emphasis: "روحانية + احتساب"
+      lexicon_add:
+        - "إفطار جماعي"
+        - "مشاركة العبادة"
+    jeddah:
+      emphasis: "أسرية + احتفالية"
+      lexicon_add:
+        - "جلسات عائلية"
+        - "ليالي رمضان"
+    eastern:
+      emphasis: "هدوء + تأمّل"
+      lexicon_add:
+        - "سكينة رمضان"
+        - "روحانية الشهر"
+
+  national_day:
+    all_cities:
+      tone_shift: "فخر وطني + رؤية 2030"
+      preferred:
+        - "اعتزاز"
+        - "وطن طموح"
+        - "همة السعوديين"
+    riyadh:
+      emphasis: "رسمي فخور"
+      lexicon_add:
+        - "عزّة الوطن"
+        - "قيادة حكيمة"
+    jeddah:
+      emphasis: "احتفالي فرح"
+      lexicon_add:
+        - "مهرجانات الوطن"
+        - "عرس وطني"
+    eastern:
+      emphasis: "هادئ فخور"
+      lexicon_add:
+        - "اعتزاز هادئ"
+        - "ولاء وطني"
+
+  eid:
+    all_cities:
+      tone_shift: "بهجة + أسرة"
+      preferred:
+        - "عيد مبارك"
+        - "فرحة العيد"
+    riyadh:
+      emphasis: "رسمي فرح"
+    jeddah:
+      emphasis: "احتفالي حيوي"
+    eastern:
+      emphasis: "هادئ سعيد"
+
+rejection_rules:
+  hard_fail:
+    - "تجاهل السياق الموسمي"
+    - "نبرة غير مناسبة للموسم"
+  soft_fail:
+    - "ضعف التكيّف مع نبرة المدينة في الموسم"

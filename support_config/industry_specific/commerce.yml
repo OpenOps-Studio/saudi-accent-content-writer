@@ -1,0 +1,19 @@
+version: "1.0"
+industry: "Commerce"
+last_updated: "2026-02-22"
+
+priority_messages:
+  - "سهولة الطلب"
+  - "ثقة الدفع"
+  - "سرعة التوصيل"
+
+proof_elements:
+  - "تجارب عملاء"
+  - "سياسات استبدال واضحة"
+
+cta_preferences:
+  - "اطلب الآن"
+  - "شوف التفاصيل"
+
+avoid:
+  - "ادعاءات سعرية بدون دليل"

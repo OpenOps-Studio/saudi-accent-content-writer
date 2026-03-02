@@ -1,7 +1,7 @@
 {
   "id": "saudi-accent-content-writer",
   "name": "Saudi Accent Content Writer",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Agent profile and assets for crafting Saudi-dialect content across platforms with governance and quality gates.",
   "owner": "OpenOps Studio",
   "authors": [
@@ -34,5 +34,5 @@
     "examples.md",
     "creative.md"
   ],
-  "last_updated": "2026-01-13"
+  "last_updated": "2026-02-22"
 }

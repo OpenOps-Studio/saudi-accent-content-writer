@@ -1,0 +1,19 @@
+version: "1.0"
+industry: "Services"
+last_updated: "2026-02-22"
+
+priority_messages:
+  - "الخبرة والموثوقية"
+  - "سهولة التواصل"
+  - "تجربة مريحة"
+
+proof_elements:
+  - "توصيات العملاء"
+  - "التزام زمني واضح"
+
+cta_preferences:
+  - "تواصل معنا"
+  - "احجز موعد"
+
+avoid:
+  - "مبالغات غير قابلة للقياس"

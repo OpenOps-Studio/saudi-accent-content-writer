@@ -18,6 +18,22 @@
 
 ## Quick Copy Examples
 
+### Example 0: Dialect Enforcer (Saudi Professional)
+
+**LinkedIn (Professional Saudi)**:
+```
+"لاحظنا أن فرق التشغيل في السعودية تواجه تحديات متكررة في وضوح التقارير.
+الحل مو في أدوات أكثر، الحل في بساطة التنفيذ.
+حاب تعرف كيف؟ شاركنا سؤالك بالردود."
+```
+
+**Instagram (Warm Saudi Conversational)**:
+```
+"يا جماعة، تعبنا من التعقيد 😅
+الحين صار فيه طريقة أسهل تنظّم يومك.
+جرّبها اليوم وخبرنا رأيك 👇"
+```
+
 ### Example 1: E-Commerce Product Launch
 
 **Context**: Tech gadget company, Instagram campaign

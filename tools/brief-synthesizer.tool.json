@@ -1,0 +1,25 @@
+{
+  "tool_id": "brief-synthesizer",
+  "name": "Brief Synthesizer (Smart Intake → Signals)",
+  "version": "0.1.0",
+  "status": "spec",
+  "description": "Normalize a messy brief into structured inputs, priorities, risks, and platform signals for Saudi content generation.",
+  "inputs": {
+    "raw_brief": "string",
+    "platforms": "array<string>",
+    "audience": "optional<object>",
+    "goals": "optional<array<string>>"
+  },
+  "outputs": {
+    "normalized_brief": "object",
+    "priority_objectives": "array<string>",
+    "risk_flags": "array<string>",
+    "platform_signals": "object"
+  },
+  "references": ["../processing-logic.yml", "../platform-copy-techniques.md"],
+  "attribution": {
+    "copyright": "© OpenOps Studio",
+    "created_by": "Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
+  }
+}

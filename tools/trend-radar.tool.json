@@ -1,0 +1,25 @@
+{
+  "tool_id": "trend-radar",
+  "name": "Trend & Competitor Radar (KSA)",
+  "version": "0.1.0",
+  "status": "spec",
+  "description": "Summarize KSA market signals, competitor themes, and audience sentiment to guide content angles.",
+  "inputs": {
+    "industry": "string",
+    "audience_segments": "array<string>",
+    "platforms": "array<string>",
+    "time_window_days": "optional<number>"
+  },
+  "outputs": {
+    "trend_clusters": "array<object>",
+    "competitor_themes": "array<string>",
+    "opportunity_gaps": "array<string>",
+    "risk_topics": "array<string>"
+  },
+  "references": ["../core-capabilities.md"],
+  "attribution": {
+    "copyright": "© OpenOps Studio",
+    "created_by": "Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
+  }
+}
